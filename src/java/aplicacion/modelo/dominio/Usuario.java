@@ -24,7 +24,7 @@ public class Usuario implements Serializable {
      * atributo de tipo objeto de nombre User user
      */
 
-    public User user;
+    
 
     /**
      * cosntructor por defecto de la clase
@@ -41,11 +41,11 @@ public class Usuario implements Serializable {
      * @param correoElectronico direccion del E-mail del Usuario
      * @param user atributo de tipo objeto
      */
-    public Usuario(String nombreUsuario, String password, String correoElectronico, User user) {
+    public Usuario(String nombreUsuario, String password, String correoElectronico) {
         this.nombreUsuario = nombreUsuario;
         this.password = password;
         this.correoElectronico = correoElectronico;
-        this.user = user;
+        
     }
 
     //SECCION DE GETTERS Y SETTERS
@@ -73,12 +73,6 @@ public class Usuario implements Serializable {
         this.correoElectronico = correoElectronico;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+    
 
 }
