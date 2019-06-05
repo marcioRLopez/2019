@@ -1,0 +1,87 @@
+
+#top {
+    
+    position: relative;
+    background-color: #036fab;
+    color: white;
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+}
+
+#bottom {
+    position: relative;
+    background-color: #c2dfef;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+}
+
+#left {
+    float: left;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+#right {
+    float: right;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+.row{
+    width: 100%;
+/*    display:flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+CODIGO PARA HACER RESPONSIVE
+*/
+    background: url("../images/image2.png") repeat;
+   
+    background-repeat: round;
+    background-size: 100% 100%;
+    background-origin: content-box;
+   
+        
+}
+    
+  
+
+
+.col-4{
+    width: 33.33%;
+}
+
+.col-8{
+    width: 66.66%;
+}
+.center_content {
+    position: relative;
+    background-color: #dddddd;
+    padding: 5px;
+}
+
+.left_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin-left: 170px;
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+  color: white;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+  color: black;
+  font-weight : bold;
+  text-decoration : underline;
+}
+
+
