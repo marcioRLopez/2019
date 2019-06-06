@@ -24,7 +24,7 @@ public class Usuario implements Serializable {
      * atributo de tipo objeto de nombre User user
      */
 
-    
+    private User user;
 
     /**
      * cosntructor por defecto de la clase
@@ -71,6 +71,20 @@ public class Usuario implements Serializable {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    /**
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(User user) {
+        this.user = user;
     }
 
     
