@@ -1,4 +1,4 @@
-package aplicacion.beans.forms;
+package aplicacion.controlador.beans.forms;
 
 import aplicacion.controlador.beans.UsuarioBean;
 import aplicacion.dao.IUsuarioDao;
