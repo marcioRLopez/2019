@@ -1,0 +1,22 @@
+			ACTIVIDADES
+
+1- Indentificar las clases un esquema de las clases del sistema(Equipo).
+
+2- Creacion de Paquete "Sistema Veterinaria 2019" en netbeans, creacion
+   del proyecto en un repositorio romoto en este caso "github" para el
+   dessarrollo de la software.
+
+3- Creacion de los paquetes en la carpeta sourcepackeges(estructura de 		
+   paquetes), creacion del template para la vista del las webpage,
+   creacion de la carpeta image para guardar las imagenes en el proyecto
+
+4- Creacion de las clases en la ide(user, mascota, DueñoMascota, Historia
+   Clinica, atencion) con atributos posibles para la primera version.
+
+5- Empezar a codificar las clases java, utizar el modelo MVC (cofificacion
+   de las interfaces DAO sus clases implemetadoras en conjunto con los
+   beans Administrados ya trabajando en esta etapa con un index de logeo
+   y ir viendo el desarrollo del AMB de DueñoMascota(index).
+
+6- Investigacion para poder llevar a cabo los mapeos con la base de dato
+   usando el motor de datos mysql para la aplicacion.
