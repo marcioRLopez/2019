@@ -34,11 +34,11 @@ public class UsuarioFormBean {
 
     /**
      * metodo para actualizar los datos del UsuarioBean a su vez actualiza los
-     * datos de la clase Usuario y Clase User
+ datos de la clase Usuario y Clase PropietarioDeMascota
      */
     public void actualizarDatos() {
         IUsuarioDao usuarioDao = new IUsuarioDaoImp();
-        usuarioBean.getUsuario().getUser().setEstado(true);
+        usuarioBean.getUsuario().getPropietarioDeMascota().setEstado(true);
         usuarioDao.modificar(usuarioBean.getUsuario());
         FacesMessage facesmessage = new FacesMessage(FacesMessage.SEVERITY_INFO, "Datos actualizados", "Datos Actualizados");
         FacesContext.getCurrentInstance().addMessage(null, facesmessage);

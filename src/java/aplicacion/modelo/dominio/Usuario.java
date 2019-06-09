@@ -21,10 +21,10 @@ public class Usuario implements Serializable {
      */
     public String correoElectronico;
     /**
-     * atributo de tipo objeto de nombre User user
+     * atributo de tipo objeto de nombre PropietarioDeMascota propietarioDeMascota
      */
 
-    private User user;
+    private PropietarioDeMascota propietarioDeMascota;
 
     /**
      * cosntructor por defecto de la clase
@@ -34,12 +34,11 @@ public class Usuario implements Serializable {
     }
 
     /**
-     * constructor parametrizado de la clase User
+     * constructor parametrizado de la clase PropietarioDeMascota
      *
      * @param nombreUsuario nombre identificatorio del Usuario
      * @param password password o contraseña del Usuario dentro del Sistema
      * @param correoElectronico direccion del E-mail del Usuario
-     * @param user atributo de tipo objeto
      */
     public Usuario(String nombreUsuario, String password, String correoElectronico) {
         this.nombreUsuario = nombreUsuario;
@@ -74,17 +73,17 @@ public class Usuario implements Serializable {
     }
 
     /**
-     * @return the user
+     * @return the propietarioDeMascota
      */
-    public User getUser() {
-        return user;
+    public PropietarioDeMascota getPropietarioDeMascota() {
+        return propietarioDeMascota;
     }
 
     /**
-     * @param user the user to set
+     * @param propietarioDeMascota the propietarioDeMascota to set
      */
-    public void setUser(User user) {
-        this.user = user;
+    public void setPropietarioDeMascota(PropietarioDeMascota propietarioDeMascota) {
+        this.propietarioDeMascota = propietarioDeMascota;
     }
 
     

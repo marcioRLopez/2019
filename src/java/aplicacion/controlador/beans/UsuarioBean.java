@@ -2,7 +2,7 @@ package aplicacion.controlador.beans;
 
 import aplicacion.dao.IUsuarioDao;
 import aplicacion.dao.imp.IUsuarioDaoImp;
-import aplicacion.modelo.dominio.User;
+import aplicacion.modelo.dominio.PropietarioDeMascota;
 import aplicacion.modelo.dominio.Usuario;
 import javax.annotation.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -29,8 +29,8 @@ public class UsuarioBean {
             String nombreUsuario = usuario.getNombreUsuario();
             IUsuarioDao usuarioDao = new IUsuarioDaoImp();
             usuario = usuarioDao.obtenerUsuario(nombreUsuario);
-            if (usuario.getUser() == null) {
-                usuario.setUser(new User());
+            if (usuario.getPropietarioDeMascota() == null) {
+                usuario.setPropietarioDeMascota(new PropietarioDeMascota());
             }
         }
     }
