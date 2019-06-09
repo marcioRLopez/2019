@@ -7,8 +7,10 @@ import java.util.Date;
  * @author EZEQUIEL
  */
 public class Persona {
-    /**Atributos que serán usados por otras clases
-     , Usuario y DueñoMascota*/
+
+    /**
+     * Atributos que serán usados por otras clases , Usuario y DueñoMascota
+     */
     private String nombre;
     private String apellido;
     private Date fechaDeNacimiento;
@@ -79,6 +81,5 @@ public class Persona {
     public void setDni(String dni) {
         this.dni = dni;
     }
-    
-    
+
 }
