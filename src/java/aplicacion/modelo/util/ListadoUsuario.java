@@ -8,5 +8,6 @@ import aplicacion.modelo.dominio.Usuario;
  */
 public class ListadoUsuario {
 
-    public static Usuario[] listadoUsuarios;
+//Crea un objeto usuario en el arreglo
+    public static Usuario[] listadoUsuarios = {new Usuario("admin", "1234", "@hotmail.com")};
 }
