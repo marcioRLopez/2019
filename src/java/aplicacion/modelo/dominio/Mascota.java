@@ -5,6 +5,7 @@
  */
 package aplicacion.modelo.dominio;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -13,7 +14,7 @@ import java.util.Date;
  * clase que indica los atributos de  la mascota
  */
 
-public class Mascota {
+public class Mascota implements Serializable{
 
    /**
     * atributo de tipo String que indica el nombre de la mascota
