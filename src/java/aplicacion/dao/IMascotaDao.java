@@ -26,7 +26,7 @@ public interface IMascotaDao {
     public void crear(Mascota mascota);
 
     /**
-     * metodo para modificar un usuario
+     * metodo para modificar un objeto de tipo Mascota
      *
      * @param mascota
      */
