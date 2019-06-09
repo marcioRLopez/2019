@@ -36,6 +36,8 @@ public class User {
      * mascota
      */
     public Mascota mascota;
+    
+   
 
     /**
      * constructor por defecto de la clase
