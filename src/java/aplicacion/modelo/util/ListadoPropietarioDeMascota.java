@@ -7,12 +7,12 @@ import java.util.List;
  *
  * @author EZEQUIEL
  */
-public class ListadoDuenioMascota {
+public class ListadoPropietarioDeMascota {
 
 //Lista de los dueños de la/s mascota/s
     private static List<PropietarioDeMascota> tablaDueñosMascotas;
 
-    public ListadoDuenioMascota() {
+    public ListadoPropietarioDeMascota() {
     }
 
     //Métodos accesores

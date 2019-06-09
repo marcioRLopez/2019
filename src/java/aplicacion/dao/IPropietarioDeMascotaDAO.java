@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @author EZEQUIEL
  */
-public interface IDuenioMascotaDAO {
+public interface IPropietarioDeMascotaDAO {
 
     public void agregarDuenioMascota(PropietarioDeMascota duenioMascota);
 
