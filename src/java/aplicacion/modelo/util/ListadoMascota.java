@@ -12,6 +12,9 @@ public class ListadoMascota {
     //Lista de mascotas
     private static List<Mascota> tablaMascotas;
 
+    public ListadoMascota() {
+    }
+
     //Métodos accesores get y set
     /**
      * @return the tablaMascotas
