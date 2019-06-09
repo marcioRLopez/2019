@@ -16,9 +16,11 @@ public class Persona {
     private Date fechaDeNacimiento;
     private String dni;
 
+//Constructor por defecto
     public Persona() {
     }
 
+//Constructor parametrizado
     public Persona(String nombre, String apellido, Date fechaDeNacimiento, String dni) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -26,6 +28,7 @@ public class Persona {
         this.dni = dni;
     }
 
+//Métodos accesores get y set
     /**
      * @return the nombre
      */

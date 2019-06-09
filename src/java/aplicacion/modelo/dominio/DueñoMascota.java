@@ -9,19 +9,26 @@ import java.util.Date;
  */
 public class DueñoMascota extends Persona implements Serializable {
 
+//Atributos de esta clase
     private String telefono;
     private String direccion;
+
+    //Constructor por defecto
+    public DueñoMascota() {
+    }
 
     public DueñoMascota(String telefono, String direccion) {
         this.telefono = telefono;
         this.direccion = direccion;
     }
 
+//Atributos que hereda de la clase Persona
     public DueñoMascota(String telefono, String direccion, String nombre, String apellido, Date fechaDeNacimiento, String dni) {
         super(nombre, apellido, fechaDeNacimiento, dni);
         this.telefono = telefono;
         this.direccion = direccion;
     }
+//Métodos accesores get y set
 
     /**
      * @return the telefono
