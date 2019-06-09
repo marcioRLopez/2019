@@ -1,12 +1,13 @@
 package aplicacion.modelo.dominio;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author EZEQUIEL
  */
-public class Persona {
+public class Persona implements Serializable{
 
     /**
      * Atributos que serán usados por otras clase , DueñoMascota

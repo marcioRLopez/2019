@@ -7,23 +7,23 @@ import java.util.Date;
  *
  * @author EZEQUIEL
  */
-public class DueñoMascota extends Persona implements Serializable {
+public class DuenioMascota extends Persona implements Serializable {
 
 //Atributos de esta clase
     private String telefono;
     private String direccion;
 
     //Constructor por defecto
-    public DueñoMascota() {
+    public DuenioMascota() {
     }
 
-    public DueñoMascota(String telefono, String direccion) {
+    public DuenioMascota(String telefono, String direccion) {
         this.telefono = telefono;
         this.direccion = direccion;
     }
 
 //Atributos que hereda de la clase Persona
-    public DueñoMascota(String telefono, String direccion, String nombre, String apellido, Date fechaDeNacimiento, String dni) {
+    public DuenioMascota(String telefono, String direccion, String nombre, String apellido, Date fechaDeNacimiento, String dni) {
         super(nombre, apellido, fechaDeNacimiento, dni);
         this.telefono = telefono;
         this.direccion = direccion;
