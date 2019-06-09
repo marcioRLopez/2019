@@ -9,7 +9,7 @@ import java.util.Date;
 public class Persona {
 
     /**
-     * Atributos que serán usados por otras clases , Usuario y DueñoMascota
+     * Atributos que serán usados por otras clase , DueñoMascota
      */
     private String nombre;
     private String apellido;
