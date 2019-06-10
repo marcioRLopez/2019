@@ -12,20 +12,35 @@ import java.io.Serializable;
  * @author Grupo10
  */
 public class Producto implements Serializable{
+    /**
+     * Atributos de la clase Producto
+     */
     private int codigo;
     private String nombre;
     private float precio;
     private String descripcion;
-
+    
+    /**
+     * Constructor por Defecto
+     */
     public Producto() {
     }
-
+    
+    /**
+     * Constructor Parametrizado
+     * @param codigo
+     * @param nombre
+     * @param precio
+     * @param descripcion 
+     */
     public Producto(int codigo, String nombre, float precio, String descripcion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
         this.descripcion = descripcion;
     }
+    
+    //Seccion de Getters y Setters
 
     public int getCodigo() {
         return codigo;
