@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  *
- * @author EZEQUIEL
+ * @author Grupo10
  */
 public class Persona implements Serializable{
 

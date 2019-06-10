@@ -12,7 +12,7 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author clavedesol
+ * @author Grupo10
  *
  * Bean Administrativo de la clase
  */

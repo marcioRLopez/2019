@@ -10,7 +10,7 @@ import javax.faces.bean.RequestScoped;
 
 /**
  *
- * @author clavedesol
+ * @author Grupo10
  */
 @ManagedBean
 @RequestScoped

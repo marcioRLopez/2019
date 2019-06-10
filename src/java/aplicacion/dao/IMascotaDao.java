@@ -9,7 +9,7 @@ import aplicacion.modelo.dominio.Mascota;
 import java.util.List;
 
 /**
- * @author dba
+ * @author Grupo10
  */
 public interface IMascotaDao {
 

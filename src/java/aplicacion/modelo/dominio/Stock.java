@@ -4,8 +4,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author GRUPO10 clase de tipo rubro que es la categoria del producto para su
- * venta
+ * @author GRUPO10
  */
 public class Stock implements Serializable {
 

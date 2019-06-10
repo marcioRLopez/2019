@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  *
- * @author EZEQUIEL
+ * @author Grupo10
  */
 public class ListadoPropietarioDeMascota {
 
