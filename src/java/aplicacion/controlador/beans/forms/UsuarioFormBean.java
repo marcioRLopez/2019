@@ -2,7 +2,7 @@ package aplicacion.controlador.beans.forms;
 
 import aplicacion.controlador.beans.UsuarioBean;
 import aplicacion.dao.IUsuarioDao;
-import aplicacion.dao.imp.IUsuarioDaoImp;
+import aplicacion.dao.imp.UsuarioDaoImp;
 import aplicacion.modelo.util.ListadoUsuario;
 import javax.annotation.ManagedBean;
 import javax.faces.application.FacesMessage;
@@ -37,7 +37,7 @@ public class UsuarioFormBean {
  datos de la clase Usuario y Clase PropietarioDeMascota
      */
     public void actualizarDatos() {
-        IUsuarioDao usuarioDao = new IUsuarioDaoImp();
+        IUsuarioDao usuarioDao = new UsuarioDaoImp();
         usuarioBean.getUsuario().getPropietarioDeMascota().setEstado(true);
         usuarioDao.modificar(usuarioBean.getUsuario());
         FacesMessage facesmessage = new FacesMessage(FacesMessage.SEVERITY_INFO, "Datos actualizados", "Datos Actualizados");

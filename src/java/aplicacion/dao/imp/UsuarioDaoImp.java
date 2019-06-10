@@ -9,7 +9,7 @@ import aplicacion.modelo.util.ListadoUsuario;
  *
  * @author GRUPO10
  */
-public class IUsuarioDaoImp implements IUsuarioDao {
+public class UsuarioDaoImp implements IUsuarioDao {
 
     @Override
     /**
