@@ -9,7 +9,7 @@ import java.util.Date;
  *
  * @author GRUPO10
  */
-public class PropietarioDeMascota extends Persona implements Serializable {
+public class PropietarioDeMascota implements Serializable {
 
     /**
      * atributo de tipo estado que indica si un PropietarioDeMascota esta
@@ -58,7 +58,7 @@ public class PropietarioDeMascota extends Persona implements Serializable {
      * @param dni el Documento Nacionel de Identidad del dueño de Mascota
      */
     public PropietarioDeMascota(boolean estado, String direccion, String telefono, String nombre, String apellido, Date fechaDeNacimiento, String dni) {
-        super(nombre, apellido, fechaDeNacimiento, dni);
+        
         this.estado = estado;
         this.direccion = direccion;
         this.telefono = telefono;
