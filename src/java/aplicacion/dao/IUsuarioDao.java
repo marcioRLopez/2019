@@ -1,45 +1,45 @@
 package aplicacion.dao;
 
-import aplicacion.modelo.dominio.Usuario;
+import aplicacion.modelo.dominio.Doctor;
 
 /**
  *
  * @author GRUPO10
- *
- * interface de la clase Usuario
+
+ interface de la clase Doctor
  */
 public interface IUsuarioDao {
 
     /**
-     * creacion del Usuario y metodo para Validar este mediante su atributo de
-     * nombre y password
+     * creacion del Doctor y metodo para Validar este mediante su atributo de
+ nombre y password
      *
      * @param nombreUsuario
      * @param password
-     * @return Usuario Validado o mensaje de Usuario mal ingresado o inexistente
+     * @return Doctor Validado o mensaje de Doctor mal ingresado o inexistente
      */
-    Usuario validarUsuario(String nombreUsuario, String password);
+    Doctor validarUsuario(String nombreUsuario, String password);
 
     /**
      * metodo para modificar un usuario
      *
      * @param unUsuario
      */
-    void modificar(Usuario unUsuario);
+    void modificar(Doctor unUsuario);
 
     /**
-     * creacion del Usuario y metodo de obtencion de Usuario
+     * creacion del Doctor y metodo de obtencion de Doctor
      *
      * @param nombreUsuario
-     * @return Usuario modificado
+     * @return Doctor modificado
      */
-    Usuario obtenerUsuario(String nombreUsuario);
+    Doctor obtenerUsuario(String nombreUsuario);
 
     /**
      * metodo para crear usuario
      *
      * @param unUsuario
      */
-    void crear(Usuario unUsuario);
+    void crear(Doctor unUsuario);
 
 }

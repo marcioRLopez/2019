@@ -1,14 +1,14 @@
 package aplicacion.controlador.beans.forms;
 
 import aplicacion.controlador.beans.UsuarioBean;
-import aplicacion.dao.IUsuarioDao;
-import aplicacion.dao.imp.UsuarioDaoImp;
+//import aplicacion.dao.IUsuarioDao;
+//import aplicacion.dao.imp.UsuarioDaoImp;
 import aplicacion.modelo.util.ListadoUsuario;
 import javax.annotation.ManagedBean;
-import javax.faces.application.FacesMessage;
+//import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
-import javax.faces.context.FacesContext;
+//import javax.faces.context.FacesContext;
 
 /**
  *
@@ -34,8 +34,15 @@ public class UsuarioFormBean {
 
     /**
      * metodo para actualizar los datos del UsuarioBean a su vez actualiza los
- datos de la clase Usuario y Clase PropietarioDeMascota
+ datos de la clase Doctor y Clase PropietarioDeMascota
      */
+    
+    
+         
+            // error!!! Metodo comentado por atributo(PropietarioDeMascota) extraido de la clase Doctor
+            // Se comentaron algunas clases comentadas
+    //****************************************************************************
+    /**
     public void actualizarDatos() {
         IUsuarioDao usuarioDao = new UsuarioDaoImp();
         usuarioBean.getUsuario().getPropietarioDeMascota().setEstado(true);
@@ -43,8 +50,13 @@ public class UsuarioFormBean {
         FacesMessage facesmessage = new FacesMessage(FacesMessage.SEVERITY_INFO, "Datos actualizados", "Datos Actualizados");
         FacesContext.getCurrentInstance().addMessage(null, facesmessage);
 
-    }
-
+    }**/
+    //****************************************************************************
+    
+    
+    
+    
+    
     /**
      * lista de usuarios y get de listado de usuarios
      *

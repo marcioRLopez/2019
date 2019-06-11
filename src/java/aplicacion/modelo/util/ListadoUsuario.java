@@ -1,6 +1,6 @@
 package aplicacion.modelo.util;
 
-import aplicacion.modelo.dominio.Usuario;
+import aplicacion.modelo.dominio.Doctor;
 
 /**
  *
@@ -9,5 +9,5 @@ import aplicacion.modelo.dominio.Usuario;
 public class ListadoUsuario {
 
 //Crea un objeto usuario en el arreglo
-    public static Usuario[] listadoUsuarios = {new Usuario("admin", "1234", "@hotmail.com")};
+    public static Doctor[] listadoUsuarios = {new Doctor("admin", "1234", "@hotmail.com")};
 }

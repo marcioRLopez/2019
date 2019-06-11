@@ -1,7 +1,7 @@
 package aplicacion.dao.imp;
 
 import aplicacion.dao.IUsuarioDao;
-import aplicacion.modelo.dominio.Usuario;
+import aplicacion.modelo.dominio.Doctor;
 import aplicacion.modelo.util.ListadoUsuario;
 
 /**
@@ -16,11 +16,11 @@ public class UsuarioDaoImp implements IUsuarioDao {
      * metodo para validar un Usuario usando la lista de usuarios precargados
      * igualmente controla la existencia del password o contraseña
      */
-    public Usuario validarUsuario(String nombreUsuario, String password) {
-        Usuario u = null;
+    public Doctor validarUsuario(String nombreUsuario, String password) {
+        Doctor u = null;
         boolean existe = false;
         for (int i = 0; i < ListadoUsuario.listadoUsuarios.length && existe == false; i++) {
-            Usuario usuarioDeListado = ListadoUsuario.listadoUsuarios[i];
+            Doctor usuarioDeListado = ListadoUsuario.listadoUsuarios[i];
             if (usuarioDeListado != null && usuarioDeListado.getNombreUsuario().equals(nombreUsuario)
                     && usuarioDeListado.getPassword().equals(password)) {
                 u = usuarioDeListado;
@@ -34,10 +34,10 @@ public class UsuarioDaoImp implements IUsuarioDao {
     /**
      * metodo para modificacion de Usuario
      */
-    public void modificar(Usuario unUsuario) {
+    public void modificar(Doctor unUsuario) {
         boolean existe = false;
         for (int i = 0; i < ListadoUsuario.listadoUsuarios.length && existe != true; i++) {
-            Usuario usuarioDelListado = ListadoUsuario.listadoUsuarios[i];
+            Doctor usuarioDelListado = ListadoUsuario.listadoUsuarios[i];
             if (usuarioDelListado.getNombreUsuario().equals(unUsuario.getNombreUsuario())) {
                 ListadoUsuario.listadoUsuarios[i] = unUsuario;
                 existe = true;
@@ -50,11 +50,11 @@ public class UsuarioDaoImp implements IUsuarioDao {
      * metodo para la obtencion y/o visualizacion de un Usuario mediante el uso
      * de la lista de estos
      */
-    public Usuario obtenerUsuario(String nombreUsuario) {
-        Usuario u = null;
+    public Doctor obtenerUsuario(String nombreUsuario) {
+        Doctor u = null;
         boolean existe = false;
         for (int i = 0; i < ListadoUsuario.listadoUsuarios.length && existe == false; i++) {
-            Usuario usuarioDeListado = ListadoUsuario.listadoUsuarios[i];
+            Doctor usuarioDeListado = ListadoUsuario.listadoUsuarios[i];
             if (usuarioDeListado != null && usuarioDeListado.getNombreUsuario().equals(nombreUsuario)) {
                 u = usuarioDeListado;
                 existe = true;
@@ -67,7 +67,7 @@ public class UsuarioDaoImp implements IUsuarioDao {
     /**
      * metodo para la creacion de un Usuario
      */
-    public void crear(Usuario unUsuario) {
+    public void crear(Doctor unUsuario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

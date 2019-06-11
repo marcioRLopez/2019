@@ -12,7 +12,7 @@ public class AtencionMedica implements Serializable {
 
     private int atencionMedica;
     private Mascota mascota;
-    private Usuario usuarioCargo;
+    private Doctor usuarioCargo;
     private String diagnostico;
     private String observaciones;
     private Date fechaAtencionMedica;
@@ -22,7 +22,7 @@ public class AtencionMedica implements Serializable {
     }
 
 //Contructor parametrizado
-    public AtencionMedica(int atencionMedica, Mascota mascota, Usuario usuarioCargo, String diagnostico, String observaciones, Date fechaAtencionMedica) {
+    public AtencionMedica(int atencionMedica, Mascota mascota, Doctor usuarioCargo, String diagnostico, String observaciones, Date fechaAtencionMedica) {
         this.atencionMedica = atencionMedica;
         this.mascota = mascota;
         this.usuarioCargo = usuarioCargo;
@@ -64,14 +64,14 @@ public class AtencionMedica implements Serializable {
     /**
      * @return the usuarioCargo
      */
-    public Usuario getUsuarioCargo() {
+    public Doctor getUsuarioCargo() {
         return usuarioCargo;
     }
 
     /**
      * @param usuarioCargo the usuarioCargo to set
      */
-    public void setUsuarioCargo(Usuario usuarioCargo) {
+    public void setUsuarioCargo(Doctor usuarioCargo) {
         this.usuarioCargo = usuarioCargo;
     }
 
