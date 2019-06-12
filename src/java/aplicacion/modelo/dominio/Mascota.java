@@ -25,16 +25,18 @@ public class Mascota implements Serializable{
      */
     public String sexo;
     /**
+     * 
+     */
+    private String raza;
+    /**
      * atributo de tipo Date que indica la fecha de nacimiento de la mascota
      */
     public Date fechaNacimiento;
     /**
-     * atributo de tipo int que indica el numero de historia clinica del paciente
+     * 
      */
-    public int historiaclinica;
-    /**
-     * atributo de tipo objeto Doctor que indica el Dueño de la mascota
-     */
+    private float peso;
+    
 
     /**
      * constructor por defecto de la clase Mscota
@@ -46,15 +48,18 @@ public class Mascota implements Serializable{
  * @param nombre el nombre de la mascota
  * @param especie canino o felino u otro
  * @param sexo macho o hembra
+ * @param raza
  * @param fechaNacimiento fecha de nacimiento de la mascota
- * @param historiclinica numero de historia clinica de la mascota
+ * @param peso
  */
-    public Mascota(String nombre, String especie, String sexo, Date fechaNacimiento, int historiclinica) {
+    
+    public Mascota(String nombre, String especie, String sexo, String raza, Date fechaNacimiento, float peso) {
         this.nombre = nombre;
         this.especie = especie;
         this.sexo = sexo;
+        this.raza = raza;
         this.fechaNacimiento = fechaNacimiento;
-        this.historiaclinica = historiclinica;
+        this.peso = peso;
     }
     
     // SECCION DE GETTERS Y SETTERS
@@ -91,12 +96,11 @@ public class Mascota implements Serializable{
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public int getHistoriclinica() {
-        return historiaclinica;
+    public String getRaza() {
+        return raza;
     }
 
-    public void setHistoriclinica(int historiclinica) {
-        this.historiaclinica = historiclinica;
+    public void setRaza(String raza) {
+        this.raza = raza;
     }
-
 }
