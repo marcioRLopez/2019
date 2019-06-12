@@ -4,16 +4,16 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * clase generica para definir un CLIENTE que en este caso sera el dueño de la
+ * clase CLIENTE que en este caso sera el dueño de la
  * mascota
  *
  * @author GRUPO10
  */
-public class PropietarioDeMascota implements Serializable {
+public class PropietarioMascota implements Serializable {
 
     /**
-     * atributo de tipo estado que indica si un PropietarioDeMascota esta
-     * activo, incluido en el sistema etc
+     * atributo de tipo estado que indica si un PropietarioMascota esta
+ activo, incluido en el sistema etc
      */
     private boolean estado;
     /**
@@ -28,7 +28,7 @@ public class PropietarioDeMascota implements Serializable {
     /**
      * constructor por defecto de la clase
      */
-    public PropietarioDeMascota() {
+    public PropietarioMascota() {
 
     }
 
@@ -39,7 +39,7 @@ public class PropietarioDeMascota implements Serializable {
      * @param direccion el objeto Mascota
      * @param telefono el objeto Mascota
      */
-    public PropietarioDeMascota(boolean estado, String direccion, String telefono) {
+    public PropietarioMascota(boolean estado, String direccion, String telefono) {
         this.estado = estado;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -57,7 +57,7 @@ public class PropietarioDeMascota implements Serializable {
      * Sistema
      * @param dni el Documento Nacionel de Identidad del dueño de Mascota
      */
-    public PropietarioDeMascota(boolean estado, String direccion, String telefono, String nombre, String apellido, Date fechaDeNacimiento, String dni) {
+    public PropietarioMascota(boolean estado, String direccion, String telefono, String nombre, String apellido, Date fechaDeNacimiento, String dni) {
         
         this.estado = estado;
         this.direccion = direccion;

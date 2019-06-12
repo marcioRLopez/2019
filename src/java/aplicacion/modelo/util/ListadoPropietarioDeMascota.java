@@ -1,6 +1,6 @@
 package aplicacion.modelo.util;
 
-import aplicacion.modelo.dominio.PropietarioDeMascota;
+import aplicacion.modelo.dominio.PropietarioMascota;
 import java.util.List;
 
 /**
@@ -10,7 +10,7 @@ import java.util.List;
 public class ListadoPropietarioDeMascota {
 
 //Lista de los dueños de la/s mascota/s
-    private static List<PropietarioDeMascota> tablaDueñosMascotas;
+    private static List<PropietarioMascota> tablaDueñosMascotas;
 
     public ListadoPropietarioDeMascota() {
     }
@@ -19,14 +19,14 @@ public class ListadoPropietarioDeMascota {
     /**
      * @return the tablaDueñosMascotas
      */
-    public static List<PropietarioDeMascota> getTablaDueñosMascotas() {
+    public static List<PropietarioMascota> getTablaDueñosMascotas() {
         return tablaDueñosMascotas;
     }
 
     /**
      * @param aTablaDueñosMascotas the tablaDueñosMascotas to set
      */
-    public static void setTablaDueñosMascotas(List<PropietarioDeMascota> aTablaDueñosMascotas) {
+    public static void setTablaDueñosMascotas(List<PropietarioMascota> aTablaDueñosMascotas) {
         tablaDueñosMascotas = aTablaDueñosMascotas;
     }
 
