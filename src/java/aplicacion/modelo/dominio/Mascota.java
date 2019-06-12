@@ -15,15 +15,15 @@ public class Mascota implements Serializable{
    /**
     * atributo de tipo String que indica el nombre de la mascota
     */
-    public String nombre;
+    private String nombre;
     /**
      * atributo de tipo String que indica la especie de la mascota ej. felino, canino,etc
      */
-    public String especie;
+    private String especie;
     /**
      * atributo de tipo String que indica el sexo de la mascota ej. macho, hembra
      */
-    public String sexo;
+    private String sexo;
     /**
      * 
      */
@@ -31,7 +31,7 @@ public class Mascota implements Serializable{
     /**
      * atributo de tipo Date que indica la fecha de nacimiento de la mascota
      */
-    public Date fechaNacimiento;
+    private Date fechaNacimiento;
     /**
      * 
      */
@@ -102,5 +102,13 @@ public class Mascota implements Serializable{
 
     public void setRaza(String raza) {
         this.raza = raza;
+    }
+
+    public float getPeso() {
+        return peso;
+    }
+
+    public void setPeso(float peso) {
+        this.peso = peso;
     }
 }
