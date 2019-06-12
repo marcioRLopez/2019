@@ -12,15 +12,23 @@ import java.io.Serializable;
  * @author Grupo10
  */
 public class Vacuna implements Serializable {
-
-    public Vacuna(String nombre, String tipo_vacuna) {
-        this.nombre = nombre;
-        this.tipo_vacuna = tipo_vacuna;
-    }
-    
+    private Integer codigo;
     private String nombre;
-    private String tipo_vacuna;
+    private String tipoVacuna;
+    private Boolean estado;
 
+    public Vacuna() {
+    }
+
+    public Vacuna(Integer codigo, String nombre, String tipoVacuna, Boolean estado) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.tipoVacuna = tipoVacuna;
+        this.estado = estado;
+    }
+
+    
+    
     /**
      * @return the nombre
      */
@@ -36,16 +44,34 @@ public class Vacuna implements Serializable {
     }
 
     /**
-     * @return the tipo_vacuna
+     * @return the tipoVacuna
      */
-    public String getTipo_vacuna() {
-        return tipo_vacuna;
+    public String getTipoVacuna() {
+        return tipoVacuna;
     }
 
     /**
-     * @param tipo_vacuna the tipo_vacuna to set
+     * @param tipoVacuna the tipoVacuna to set
      */
-    public void setTipo_vacuna(String tipo_vacuna) {
-        this.tipo_vacuna = tipo_vacuna;
+    public void setTipoVacuna(String tipoVacuna) {
+        this.tipoVacuna = tipoVacuna;
     }
+
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+    
+    
 }
