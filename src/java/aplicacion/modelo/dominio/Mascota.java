@@ -11,7 +11,7 @@ import java.util.Date;
  */
 
 public class Mascota implements Serializable{
-
+    private Integer idMascota;
    /**
     * atributo de tipo String que indica el nombre de la mascota
     */
@@ -36,8 +36,8 @@ public class Mascota implements Serializable{
      * 
      */
     private float peso;
+    private Boolean estado;
     
-
     /**
      * constructor por defecto de la clase Mscota
      */
@@ -53,13 +53,15 @@ public class Mascota implements Serializable{
  * @param peso
  */
     
-    public Mascota(String nombre, String especie, String sexo, String raza, Date fechaNacimiento, float peso) {
+    public Mascota(Integer idMascota, String nombre, String especie, String sexo, String raza, Date fechaNacimiento, float peso, Boolean estado) {
+        this.idMascota = idMascota;
         this.nombre = nombre;
         this.especie = especie;
         this.sexo = sexo;
         this.raza = raza;
         this.fechaNacimiento = fechaNacimiento;
         this.peso = peso;
+        this.estado = estado;
     }
     
     // SECCION DE GETTERS Y SETTERS
@@ -110,5 +112,19 @@ public class Mascota implements Serializable{
 
     public void setPeso(float peso) {
         this.peso = peso;
+    }
+    public Integer getIdMascota() {
+        return idMascota;
+    }
+
+    public void setIdMascota(Integer idMascota) {
+        this.idMascota = idMascota;
+    }
+       public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
     }
 }
