@@ -12,7 +12,7 @@ import aplicacion.modelo.dominio.Doctor;
 
 /**
  *
- * @author VICO
+ * @author Grupo10
  */
 public class TestCreateDoctor {
     public static void main(String[] args) {
