@@ -6,7 +6,7 @@ import java.io.Serializable;
  * AUTOR GRUPO10 clase que nos indica el Doctor y todos sus atributos
  */
 public class Doctor implements Serializable {
-    private Integer idCodigo;
+    //private Integer idCodigo;
     private Boolean estado;    
      /**
      * atributo que indica el nombre de Doctor utilizado en el sistema
@@ -19,12 +19,11 @@ public class Doctor implements Serializable {
     /**
      * atributo que nos da la direccion del e-mail del Doctor
      */
-    private String correoElectronico;
+    //private String correoElectronico;
     /**
      * atributo de tipo objeto de nombre PropietarioDeMascota propietarioDeMascota
      */
-
-
+    private String tipoDoctor;
     /**
      * cosntructor por defecto de la clase
      */
@@ -39,12 +38,13 @@ public class Doctor implements Serializable {
      * @param password password o contraseña del Usuario dentro del Sistema
      * @param correoElectronico direccion del E-mail del Usuario
      */
-    public Doctor(Integer idCodigo, Boolean estado, String nombreUsuario, String password, String correoElectronico) {
-        this.idCodigo = idCodigo;
-        this.estado = estado;
+    public Doctor(Integer idCodigo, Boolean estado, String nombreUsuario, String password, String correoElectronico, String tipoDoctor) {
+        //this.idCodigo = idCodigo;
         this.nombreUsuario = nombreUsuario;
         this.password = password;
-        this.correoElectronico = correoElectronico;
+        //this.correoElectronico = correoElectronico;
+        this.estado = estado;
+        this.tipoDoctor = tipoDoctor;
         
     }
 
@@ -65,20 +65,28 @@ public class Doctor implements Serializable {
         this.password = password;
     }
 
-    public String getCorreoElectronico() {
-        return correoElectronico;
+    public String getTipoDoctor() {
+        return tipoDoctor;
     }
 
-    public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
+    public void setTipoDoctor(String tipoDoctor) {
+        this.tipoDoctor = tipoDoctor;
     }
-    public Integer getIdCodigo() {
-        return idCodigo;
-    }
+    
+     //public String getCorreoElectronico() {
+        //return correoElectronico;
+    //}
 
-    public void setIdCodigo(Integer idCodigo) {
-        this.idCodigo = idCodigo;
-    }
+    //public void setCorreoElectronico(String correoElectronico) {
+        //this.correoElectronico = correoElectronico;
+    //}
+    //public Integer getIdCodigo() {
+        //return idCodigo;
+    //}
+
+    //public void setIdCodigo(Integer idCodigo) {
+        //this.idCodigo = idCodigo;
+    //}
     public Boolean getEstado() {
         return estado;
     }

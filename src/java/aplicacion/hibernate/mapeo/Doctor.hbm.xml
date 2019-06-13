@@ -11,6 +11,9 @@
          <property name="password" type="string">
              <column name="usu_password" length="255" not-null="true"/>
          </property>
+         <property name="tipoDoctor" type="string">
+             <column name="usu_tipo_usuario" length="12" not-null="true"/>
+         </property>
          <property name="estado" type="boolean">
              <column name="usu_estado" not-null="true"/>
          </property>

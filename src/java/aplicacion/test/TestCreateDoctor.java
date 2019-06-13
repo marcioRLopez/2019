@@ -7,6 +7,7 @@ package aplicacion.test;
 
 import aplicacion.hibernate.dao.IDoctorDAO;
 import aplicacion.hibernate.dao.imp.DoctorDAOImp;
+import aplicacion.modelo.constantes.TipoDoctor;
 import aplicacion.modelo.dominio.Doctor;
 
 /**
@@ -19,6 +20,7 @@ public class TestCreateDoctor {
         primerDoctor.setEstado(Boolean.TRUE);
         primerDoctor.setNombreUsuario("admin");
         primerDoctor.setPassword("password_admin");
+        primerDoctor.setTipoDoctor(TipoDoctor.ADMIN);
         IDoctorDAO doctorDAO = new DoctorDAOImp();
         doctorDAO.create(primerDoctor);
     }
