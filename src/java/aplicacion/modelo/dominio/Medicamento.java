@@ -13,10 +13,11 @@ import java.io.Serializable;
  */
 public class Medicamento implements Serializable {
     
-    private int codigo;
+    private Integer idMedicamento;
     private String nombre;
     private byte fechaVencimiento; // Definir este atributo de tipo fecha;
     private String descripcion;
+    private Boolean estado;
     
     /**
      * Constructor por defecto
@@ -31,22 +32,24 @@ public class Medicamento implements Serializable {
      * @param fechaVencimiento
      * @param descripcion 
      */
-    public Medicamento(int codigo, String nombre, byte fechaVencimiento, String descripcion) {
-        this.codigo = codigo;
+    public Medicamento(Integer idMedicamento, String nombre, byte fechaVencimiento, String descripcion, Boolean estado) {
+        this.idMedicamento = idMedicamento;
         this.nombre = nombre;
         this.fechaVencimiento = fechaVencimiento;
         this.descripcion = descripcion;
+        this.estado = estado;
     }
     
     // Seccion de Getter y Setter
 
-    public int getCodigo() {
-        return codigo;
+    public Integer getIdMedicamento() {
+        return idMedicamento;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setIdMedicamento(Integer idMedicamento) {
+        this.idMedicamento = idMedicamento;
     }
+
 
     public String getNombre() {
         return nombre;
@@ -71,11 +74,14 @@ public class Medicamento implements Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    
-    
-    
-    
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
     
     
 }
