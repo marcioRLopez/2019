@@ -13,12 +13,13 @@ public class PropietarioMascota implements Serializable {
     /**
      * Atributos de la clase de propietario de la mascota
      */
-    private long dni;
+    private String dni;
     private String nombre;
     private String apellido;
     private String direccion;
-    private long telefono;
+    private String telefono;
     private String correo;
+    private Boolean estado;
 
     /**
      * Constructor por defecto
@@ -35,7 +36,7 @@ public class PropietarioMascota implements Serializable {
      * @param telefono
      * @param correo 
      */
-    public PropietarioMascota(long dni, String nombre, String apellido, String direccion, long telefono, String correo) {
+    public PropietarioMascota(String dni, String nombre, String apellido, String direccion, String telefono, String correo) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -54,13 +55,7 @@ public class PropietarioMascota implements Serializable {
         this.correo = correo;
     }
 
-    public long getDni() {
-        return dni;
-    }
-
-    public void setDni(long dni) {
-        this.dni = dni;
-    }
+    
 
     public String getNombre() {
         return nombre;
@@ -86,14 +81,37 @@ public class PropietarioMascota implements Serializable {
         this.direccion = direccion;
     }
 
-    public long getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(long telefono) {
+    /**
+     * @param telefono the telefono to set
+     */
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
+    /**
+     * @param dni the dni to set
+     */
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+
+    /**
+     * @return the estado
+     */
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    /**
+     * @param estado the estado to set
+     */
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
     
 
 }
