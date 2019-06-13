@@ -3,9 +3,16 @@
 
 <hibernate-mapping>
   <class name="aplicacion.modelo.dominio.Doctor" catalog="2019" table="doctor"
-         optimistic-lock="version"/>
-         <id name="nombreUsuario" type="String">
+         optimistic-lock="version">
+         <id name="nombreUsuario" type="string">
              <column name="usu_nombre_usuario" length="12"/>
              <generator class="assigned"/>
          </id>
+         <property name="password" type="string">
+             <column name="usu_password" length="255" not-null="true"/>
+         </property>
+         <property name="estado" type="boolean">
+             <column name="usu_estado" not-null="true"/>
+         </property>
+     </class>
 </hibernate-mapping>
