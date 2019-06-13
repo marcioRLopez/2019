@@ -13,7 +13,7 @@ public class PropietarioMascota implements Serializable {
     /**
      * Atributos de la clase de propietario de la mascota
      */
-    private String dni;
+    private Integer dni;
     private String nombre;
     private String apellido;
     private String direccion;
@@ -36,7 +36,7 @@ public class PropietarioMascota implements Serializable {
      * @param telefono
      * @param correo 
      */
-    public PropietarioMascota(String dni, String nombre, String apellido, String direccion, String telefono, String correo) {
+    public PropietarioMascota(Integer dni, String nombre, String apellido, String direccion, String telefono, String correo) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -92,14 +92,6 @@ public class PropietarioMascota implements Serializable {
         this.telefono = telefono;
     }
     /**
-     * @param dni the dni to set
-     */
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-
-    /**
      * @return the estado
      */
     public Boolean getEstado() {
@@ -111,6 +103,20 @@ public class PropietarioMascota implements Serializable {
      */
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    /**
+     * @return the dni
+     */
+    public Integer getDni() {
+        return dni;
+    }
+
+    /**
+     * @param dni the dni to set
+     */
+    public void setDni(Integer dni) {
+        this.dni = dni;
     }
     
 
