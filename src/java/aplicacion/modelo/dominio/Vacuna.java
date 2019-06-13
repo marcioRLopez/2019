@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author Grupo10
  */
 public class Vacuna implements Serializable {
-    private Integer codigo;
+    private Integer idVacuna;
     private String nombre;
     private String tipoVacuna;
     private Boolean estado;
@@ -20,8 +20,8 @@ public class Vacuna implements Serializable {
     public Vacuna() {
     }
 
-    public Vacuna(Integer codigo, String nombre, String tipoVacuna, Boolean estado) {
-        this.codigo = codigo;
+    public Vacuna(Integer idVacuna, String nombre, String tipoVacuna, Boolean estado) {
+        this.idVacuna = idVacuna;
         this.nombre = nombre;
         this.tipoVacuna = tipoVacuna;
         this.estado = estado;
@@ -57,12 +57,12 @@ public class Vacuna implements Serializable {
         this.tipoVacuna = tipoVacuna;
     }
 
-    public Integer getCodigo() {
-        return codigo;
+    public Integer getidVacuna() {
+        return idVacuna;
     }
 
-    public void setCodigo(Integer codigo) {
-        this.codigo = codigo;
+    public void setidVacuna(Integer idVacuna) {
+        this.idVacuna = idVacuna;
     }
 
     public Boolean getEstado() {
