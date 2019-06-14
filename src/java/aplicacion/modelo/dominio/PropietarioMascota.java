@@ -11,14 +11,37 @@ import java.io.Serializable;
 public class PropietarioMascota implements Serializable {
     
     /**
-     * Atributos de la clase de propietario de la mascota
+     * atributo que indica el documento nacional de identidad del propietario de la  mascota
+     * necesario para su identificacion
      */
     private Integer dni;
+    /**
+     * atributo que indica el nombre del propietario de la mascota
+     */
     private String nombre;
+    /**
+     * atributo que indica el apellido del propietario de la mascota
+     */
     private String apellido;
+    /**
+     * attributo que indica la direccion o domicilio del propietario de la mascota
+     * necesario para su identificacion
+     */
     private String direccion;
+    /**
+     * atributo que indica el numero telefonico del propietario de la mascota
+     * necesario para su identificacion
+     */
     private String telefono;
+    /**
+     * atributo que indica el correo electronico o email del propietario de la mascota 
+     * necesario para su identificacion
+     */
     private String correo;
+    /**
+     * atributo que indica el estado del propietario de la mascota
+     * puede indicar varios estados tales como atendido, en espera, etc
+     */
     private Boolean estado;
 
     /**
@@ -28,13 +51,13 @@ public class PropietarioMascota implements Serializable {
     }
     
     /**
-     * Constructor Parametrizado
-     * @param dni
-     * @param nombre
-     * @param apellido
-     * @param direccion
-     * @param telefono
-     * @param correo 
+     * Constructor Parametrizado de la clase
+     * @param dni el documento nacional de identidad del propietario
+     * @param nombre el nombre del propietario
+     * @param apellido el apellido del propietario
+     * @param direccion la direccion o domicilio del propietario
+     * @param telefono el numero telefonico fijo o de celular del propietario
+     * @param correo  el correo electronico del propietario
      */
     public PropietarioMascota(Integer dni, String nombre, String apellido, String direccion, String telefono, String correo) {
         this.dni = dni;
