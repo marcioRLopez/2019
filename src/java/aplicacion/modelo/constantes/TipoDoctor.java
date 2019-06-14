@@ -1,14 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package aplicacion.modelo.constantes;
 
 /**
  *
- * @author VICO
+ * @author GRUPO10
+ * Clase constante de tipo doctor,sera una variable del sistema que mantendra un valor inmutable 
+ * durante la vida del programa
  */
 public class TipoDoctor {
+    /**
+     * metodo estatico, final y no modificable
+     */
     public static final String ADMIN="ADMIN";
 }
