@@ -18,5 +18,10 @@
    beans Administrados ya trabajando en esta etapa con un index de logeo
    y ir viendo el desarrollo del AMB de DueñoMascota(index).
 
-6- Investigacion para poder llevar a cabo los mapeos con la base de dato
+6- Investigacion para poder llevar a cabo los mapeos con la base de datos
    usando el motor de datos mysql para la aplicacion.
+
+7.- asignacion de 2 horas/reloj de tiempo productivo para la realizacion
+
+8.- cada participante confirma conectarse
+   del proyecto para cada integrante.
