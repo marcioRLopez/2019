@@ -17,7 +17,7 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Dios salva
+ * @author Grupo10
  */
 @ManagedBean
 @RequestScoped

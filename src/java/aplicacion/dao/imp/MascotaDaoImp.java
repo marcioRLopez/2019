@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  *
- * @author GrupoDiez
+ * @author Grupo10
  */
 public class MascotaDaoImp implements IMascotaDao{
 

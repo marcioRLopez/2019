@@ -6,7 +6,7 @@ import aplicacion.dao.IPropietarioMascotaDAO;
 
 /**
  *
- * @author clavedesol
+ * @author Grupo10
  */
 public class PropietarioMascotaDAOImp implements IPropietarioMascotaDAO{
 

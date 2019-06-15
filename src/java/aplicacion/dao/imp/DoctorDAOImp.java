@@ -14,7 +14,7 @@ import org.hibernate.criterion.Restrictions;
 
 /**
  *
- * @author Dios salva
+ * @author Grupo10
  */
 public class DoctorDAOImp implements IDoctorDAO{
 

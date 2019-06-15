@@ -7,7 +7,6 @@ package aplicacion.controlador.beans;
 
 import aplicacion.dao.IDoctorDAO;
 import aplicacion.dao.imp.DoctorDAOImp;
-import aplicacion.modelo.dominio.Propietariomascota;
 import aplicacion.modelo.dominio.Doctor;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
@@ -16,7 +15,7 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Dios salva
+ * @author Grupo10
  */
 @ManagedBean
 @RequestScoped

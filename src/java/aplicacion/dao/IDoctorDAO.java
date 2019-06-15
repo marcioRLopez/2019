@@ -9,7 +9,7 @@ import aplicacion.modelo.dominio.Doctor;
 
 /**
  *
- * @author Dios salva
+ * @author Grupo10
  */
 public interface IDoctorDAO {
     /**
