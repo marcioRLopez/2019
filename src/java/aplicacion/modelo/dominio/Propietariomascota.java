@@ -80,9 +80,6 @@ public class Propietariomascota  implements java.io.Serializable {
         this.estado = estado;
     }
 
-
-
-
 }
 
 

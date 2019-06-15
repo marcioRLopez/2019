@@ -15,14 +15,14 @@
                 <p:panel header="Acceso al Sistema de Veterinaria" footer="Grupo 10 - Programación Visual 2019">
                     <h:panelGrid columns="2" cellpadding="5">
                         <p:outputLabel for="txtNombre" value="Ingrese Nombre de Usuario: "/>
-                        <p:inputText id="txtNombre" required="true" value=""/>
+                        <p:inputText id="txtNombre" required="true" value="#{loginFormBean.nombreUsuario}"/>
 
                         <p:outputLabel for="txtContraseña" value="Ingrese Password: "/>
-                        <p:password id="txtContraseña" required="true" value=""/>
+                        <p:password id="txtContraseña" required="true" value="#{loginFormBean.password}"/>
 
                         <h:panelGroup/>
                         <p:commandButton id="btnValidar" value="Validar Usuario" update="frmLogin"
-                                         action="#"/>
+                                         action="#{loginFormBean.validarUsuario()}"/>
                     </h:panelGrid>
                 </p:panel>
             </h:form>
