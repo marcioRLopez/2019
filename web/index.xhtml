@@ -5,35 +5,28 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
+        <link rel="stylesheet" type="text/css" href="resources/css/login.css"/>
         <title>VETERINARIA MARJ</title>
     </h:head>
     <h:body>
-        <ui:composition template ="resources/templateLogin.xhtml">
-            <ui:define name="bottom">
-       <div id="contenedor">
-           <h:form id="frmLogin">
-                <p:separator style="height: 8px"/>
-                    <p:growl id="mensajeGeneral" showDetail="false" sticky="false"/> 
-                   
-                    <p:panel header="ATENCION VETERINARIA" footer="MARJ">
-                        <h:panelGrid columns="2" cellpadding="8">
-                            <p:outputLabel for="txtNombre" value="Nombre de Usuario: "/>
-                            <p:inputText id="txtNombre" required="true" value=""/>
+        <div class="conteiner">
+            <h:form id="frmLogin">
+                <p:growl id="mensajeGeneral" showDetail="false" sticky="false"/> 
+                <p:panel header="Acceso al Sistema de Veterinaria" footer="Grupo 10 - Programación Visual 2019">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:outputLabel for="txtNombre" value="Ingrese Nombre de Usuario: "/>
+                        <p:inputText id="txtNombre" required="true" value=""/>
 
-                            <p:outputLabel for="txtContraseña" value="Password: "/>
-                            <p:password id="txtContraseña" required="true" value=""/>
+                        <p:outputLabel for="txtContraseña" value="Ingrese Password: "/>
+                        <p:password id="txtContraseña" required="true" value=""/>
 
-                            <h:panelGroup/>
-                            <p:commandButton id="btnValidar" value="INGRESAR" update="frmLogin" icon="icon-login"
-                                             />
-                        </h:panelGrid>
-                    </p:panel>
-                </h:form>
-          
+                        <h:panelGroup/>
+                        <p:commandButton id="btnValidar" value="Validar Usuario" update="frmLogin"
+                                         action=""/>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
         </div>
-                </ui:define>
-        </ui:composition>
-        
     </h:body>
 </html>
 
