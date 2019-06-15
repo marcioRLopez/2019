@@ -1,6 +1,6 @@
 package aplicacion.modelo.util;
 
-import aplicacion.modelo.dominio.AtencionMedica;
+import aplicacion.modelo.dominio.Atencion;
 import java.util.List;
 
 /**
@@ -10,7 +10,7 @@ import java.util.List;
 public class ListadoAtencionMedica {
 
     //Lista para guardar atenciones médicas
-    private static List<AtencionMedica> tablaAtencionesMedicas;
+    private static List<Atencion> tablaAtencionesMedicas;
 
     public ListadoAtencionMedica() {
     }
@@ -19,14 +19,14 @@ public class ListadoAtencionMedica {
     /**
      * @return the tablaAtencionesMedicas
      */
-    public static List<AtencionMedica> getTablaAtencionesMedicas() {
+    public static List<Atencion> getTablaAtencionesMedicas() {
         return tablaAtencionesMedicas;
     }
 
     /**
      * @param aTablaAtencionesMedicas the tablaAtencionesMedicas to set
      */
-    public static void setTablaAtencionesMedicas(List<AtencionMedica> aTablaAtencionesMedicas) {
+    public static void setTablaAtencionesMedicas(List<Atencion> aTablaAtencionesMedicas) {
         tablaAtencionesMedicas = aTablaAtencionesMedicas;
     }
 

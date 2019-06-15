@@ -1,6 +1,6 @@
 package aplicacion.dao.imp;
 
-import aplicacion.modelo.dominio.PropietarioMascota;
+import aplicacion.modelo.dominio.Propietariomascota;
 import java.util.List;
 import aplicacion.dao.IPropietarioMascotaDAO;
 
@@ -11,22 +11,22 @@ import aplicacion.dao.IPropietarioMascotaDAO;
 public class PropietarioMascotaDAOImp implements IPropietarioMascotaDAO{
 
     @Override
-    public void agregarDuenioMascota(PropietarioMascota duenioMascota) {
+    public void agregarDuenioMascota(Propietariomascota duenioMascota) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void modificarDuenioMascota(PropietarioMascota duenioMascota) {
+    public void modificarDuenioMascota(Propietariomascota duenioMascota) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void borrarDuenioMascota(PropietarioMascota duenioMascota) {
+    public void borrarDuenioMascota(Propietariomascota duenioMascota) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<PropietarioMascota> obtenerTodxs() {
+    public List<Propietariomascota> obtenerTodxs() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

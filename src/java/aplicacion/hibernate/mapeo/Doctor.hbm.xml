@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15/06/2019 05:38:02 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class name="aplicacion.modelo.dominio.Doctor" catalog="2019" table="doctor"
-         optimistic-lock="version">
-         <id name="nombreUsuario" type="string">
-             <column name="usu_nombre_usuario" length="12"/>
-             <generator class="assigned"/>
-         </id>
-         <property name="password" type="string">
-             <column name="usu_password" length="255" not-null="true"/>
-         </property>
-         <property name="tipoDoctor" type="string">
-             <column name="usu_tipo_usuario" length="12" not-null="true"/>
-         </property>
-         <property name="estado" type="boolean">
-             <column name="usu_estado" not-null="true"/>
-         </property>
-     </class>
+  <class catalog="veterinaria2019" name="aplicacion.modelo.dominio.Doctor" optimistic-lock="version" table="doctor">
+    <id name="nombreUsuario" type="string">
+      <column length="12" name="nombre_usuario"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="password" type="string">
+      <column length="12" name="password" not-null="true"/>
+    </property>
+    <property name="correoElectronico" type="string">
+      <column length="54" name="correo_electronico" not-null="true"/>
+    </property>
+    <property name="estado" type="boolean">
+      <column name="estado" not-null="true"/>
+    </property>
+    <property name="persona" type="string">
+      <column length="10" name="persona" not-null="true"/>
+    </property>
+  </class>
 </hibernate-mapping>

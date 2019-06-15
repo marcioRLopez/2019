@@ -1,6 +1,6 @@
 package aplicacion.dao;
 
-import aplicacion.modelo.dominio.PropietarioMascota;
+import aplicacion.modelo.dominio.Propietariomascota;
 import java.util.List;
 
 /**
@@ -14,26 +14,26 @@ public interface IPropietarioMascotaDAO {
      *
      * @param duenioMascota de tipo PropietarioMascota
      */
-    public void agregarDuenioMascota(PropietarioMascota duenioMascota);
+    public void agregarDuenioMascota(Propietariomascota duenioMascota);
 
     /**
      * Modifica un propietario de la mascota
      *
      * @param duenioMascota de tipo PropietarioMascota
      */
-    public void modificarDuenioMascota(PropietarioMascota duenioMascota);
+    public void modificarDuenioMascota(Propietariomascota duenioMascota);
 
     /**
      * Elimina un propietario de la mascota
      *
      * @param duenioMascota de tipo PropietarioMascota
      */
-    public void borrarDuenioMascota(PropietarioMascota duenioMascota);
+    public void borrarDuenioMascota(Propietariomascota duenioMascota);
 
     /**
      * metodo que retorna una lista de propietarios de las mascotas
      *
      * @return PropietarioMascota
      */
-    public List<PropietarioMascota> obtenerTodxs();
+    public List<Propietariomascota> obtenerTodxs();
 }

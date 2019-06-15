@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15/06/2019 05:38:02 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="veterinaria2019" name="aplicacion.modelo.dominio.Propietariomascota" optimistic-lock="version" table="propietariomascota">
+    <id name="dni" type="int">
+      <column name="dni"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="nombre" type="string">
+      <column length="20" name="nombre" not-null="true"/>
+    </property>
+    <property name="apellido" type="string">
+      <column length="20" name="apellido" not-null="true"/>
+    </property>
+    <property name="direccion" type="string">
+      <column length="50" name="direccion" not-null="true"/>
+    </property>
+    <property name="telefono" type="int">
+      <column name="telefono" not-null="true"/>
+    </property>
+    <property name="correo" type="string">
+      <column length="60" name="correo" not-null="true"/>
+    </property>
+    <property name="estado" type="boolean">
+      <column name="estado" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>
