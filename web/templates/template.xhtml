@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout_1.css"/>
+        <title>Veterinaria</title>
+    </h:head>
+
+    <h:body>
+        <div class="container">
+            <div id="top">
+                <ui:insert id="cabecera">
+                    <div id="titulo">
+                        <center><h1>Veterinaria Vico</h1></center>
+                    </div>
+                    <div id="menu">
+                        <h:form>
+                            <p:menubar>
+                                <p:submenu label="Historias clínicas">
+                                    <p:menuitem value="Atenciones"/>
+                                </p:submenu>
+                                <p:submenu label="Registros">
+                                    <p:menuitem value="Propietarios"/>
+                                    <p:menuitem value="Pacientes"/>
+                                </p:submenu>
+                                <p:menuitem value="Mis datos"/>
+                                <p:menuitem value="Regresar"/>
+                                <f:facet name="options">
+                                    <p:outputLabel value="Welcome"/>
+                                    <p:commandButton value="Cerrar sesión"/>
+                                </f:facet>
+                            </p:menubar>
+                        </h:form>
+
+                        <p:panel rendered="">
+                            <h:form>
+                                <p:outputLabel value="Sesión no iniciada"/>
+                                <p:commandButton value="Iniciar sesión"/>
+                            </h:form>
+                        </p:panel>
+                    </div>
+                </ui:insert>
+            </div>
+
+            <div id="content" class="center_content">
+                <ui:insert name="content">
+                    CONTENIDOS
+
+                    <div class="row">
+                        <div class="col-8">
+                            <div id="bottom">
+                                <ui:insert name="bottom">
+
+                                </ui:insert>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div id="bottom">
+                                <ui:insert name="bottom">
+
+                                </ui:insert>
+                            </div>
+                        </div>
+                    </div>
+                </ui:insert>
+            </div>
+
+            <div id="pie">
+                <ui:insert name="pie">
+                    <hr/>
+                    <center>Pie de página</center>
+                </ui:insert>
+            </div>
+
+        </div>
+
+
+    </h:body>
+
+</html>
