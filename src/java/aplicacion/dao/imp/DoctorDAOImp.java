@@ -54,19 +54,5 @@ public class DoctorDAOImp implements IDoctorDAO {
         return usuario;
     }
 
-    @Override
-    public Doctor validarUsuario2(String nombreUsuario, String password) {
-        Doctor usuario = null;
-        for (int i = 0; i < ListadoUsuarios.tablaUsuarios.length; i++) {
-            if (ListadoUsuarios.tablaUsuarios[i] != null) {
-                if (ListadoUsuarios.tablaUsuarios[i].getNombreUsuario().equals(nombreUsuario) && ListadoUsuarios.tablaUsuarios[i].getPassword().equals(password)) {
-                    usuario = ListadoUsuarios.tablaUsuarios[i];
-                    break;
-                }
-            }
-
-        }
-        return usuario;
-    }
 
 }

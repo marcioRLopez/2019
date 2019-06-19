@@ -26,8 +26,9 @@ public class LoginFormBean {
 //por validarUsuario, o sea simplemente le borras el 2
     public String validarUsuario() {
         String resultado = null;
+        System.out.println("BLaaaa");
         IDoctorDAO usuarioDAO = new DoctorDAOImp();
-        Doctor unUsuario = usuarioDAO.validarUsuario2(nombreUsuario, password);
+        Doctor unUsuario = usuarioDAO.validarUsuario(nombreUsuario, password);
         if (unUsuario == null) {
             FacesMessage mensaje = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Credenciales inválidas", "Credenciales inválidas");
             FacesContext.getCurrentInstance().addMessage(null, mensaje);
@@ -36,6 +37,7 @@ public class LoginFormBean {
             FacesContext.getCurrentInstance().addMessage(null, mensaje);
             FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuarioValidado", unUsuario);
             resultado = "menu?faces-redirect=true";
+           
         }
         return resultado;
     }

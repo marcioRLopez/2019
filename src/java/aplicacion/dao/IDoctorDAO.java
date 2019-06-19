@@ -17,7 +17,7 @@ public interface IDoctorDAO {
      */
     Doctor validarUsuario(String nombreUsuario, String password);
 
-    Doctor validarUsuario2(String nombreUsuario, String password);
+    //Doctor validarUsuario2(String nombreUsuario, String password);
 
     void modificar(Doctor unUsuario);
 
