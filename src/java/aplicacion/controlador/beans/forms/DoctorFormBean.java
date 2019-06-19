@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacion.controladorFormsBeans;
+package aplicacion.controlador.beans.forms;
 
 import aplicacion.dao.IDoctorDAO;
 import aplicacion.dao.imp.DoctorDAOImp;

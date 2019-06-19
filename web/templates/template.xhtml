@@ -14,35 +14,37 @@
     </h:head>
 
     <h:body>
-        <div class="container">
+        <div id="contenedor">
             <div id="top">
-                <ui:insert id="cabecera">
-                    <div id="titulo">
-                        <center><h1>Veterinaria Vico</h1></center>
+                <ui:insert name="top">
+                    <div id="tooplate_header">
+                        <div id="titulo">
+                            <center><h1>Veterinaria Vico</h1></center>
+                        </div>
                     </div>
-                    <div id="menu">
-                        <h:form>
+                    <div id="tooplate_middle">
+                        <h:form rendered="#{loginFormBean.verificarSesion()}">
                             <p:menubar>
                                 <p:submenu label="Historias clínicas">
-                                    <p:menuitem value="Atenciones"/>
+                                    <p:menuitem value="Atenciones" outcome="/pacientes/atenciones"/>
                                 </p:submenu>
                                 <p:submenu label="Registros">
-                                    <p:menuitem value="Propietarios"/>
-                                    <p:menuitem value="Pacientes"/>
+                                    <p:menuitem value="Propietarios" outcome="/propietarios/propietarios"/>
+                                    <p:menuitem value="Pacientes" outcome="/pacientes/pacientes"/>
                                 </p:submenu>
-                                <p:menuitem value="Mis datos"/>
-                                <p:menuitem value="Regresar"/>
+                                <p:menuitem value="Mis datos" outcome="/usuarios/usuarioDoctor"/>
+                                <p:menuitem value="Regresar" outcome="/menu"/>
                                 <f:facet name="options">
-                                    <p:outputLabel value="Welcome"/>
-                                    <p:commandButton value="Cerrar sesión"/>
+                                    <p:outputLabel value="Welcome #{loginFormBean.nombreUsuarioValidado}"/>
+                                    <p:commandButton value="Cerrar sesión" action="#{loginFormBean.cerrarSesion()}"/>
                                 </f:facet>
                             </p:menubar>
                         </h:form>
 
-                        <p:panel rendered="">
+                        <p:panel rendered="#{loginFormBean.verificarSesion()eq false}">
                             <h:form>
                                 <p:outputLabel value="Sesión no iniciada"/>
-                                <p:commandButton value="Iniciar sesión"/>
+                                <p:commandButton value="Iniciar sesión" action="/index?faces-redirect=true"/>
                             </h:form>
                         </p:panel>
                     </div>
@@ -73,10 +75,10 @@
                 </ui:insert>
             </div>
 
-            <div id="pie">
-                <ui:insert name="pie">
+            <div id="bottom">
+                <ui:insert name="bottom">
                     <hr/>
-                    <center>Pie de página</center>
+                    <center>Pie de página fin</center>
                 </ui:insert>
             </div>
 
