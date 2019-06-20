@@ -3,7 +3,7 @@ package aplicacion.hibernate.dao.imp;
 import aplicacion.hibernate.configuracion.HibernateUtil;
 import aplicacion.hibernate.dao.IDoctorDAO;
 import aplicacion.modelo.dominio.Doctor;
-import aplicacion.modelo.util.ListadoUsuarios; // importante!!! hay que eliminar esta linea de codigo ya que no vamos a trabajar con una lista de usuarios
+//import aplicacion.modelo.util.ListadoUsuarios; // importante!!! hay que eliminar esta linea de codigo ya que no vamos a trabajar con una lista de usuarios
 import java.io.Serializable;
 import org.hibernate.Session;
 
@@ -21,8 +21,9 @@ public class DoctorDAOImp implements Serializable, IDoctorDAO {
         session.getTransaction().commit();
         session.close();
     }
-
-    @Override
+    
+    // CODIGO PARA ELIMINAR(no se utilizan lista)
+    /**@Override
     public Doctor validarUsuario(String nombreUsuario, String password) {
         Doctor usuario = null;
         for (int i = 0; i < ListadoUsuarios.tablaUsuarios.length; i++) {
@@ -34,9 +35,11 @@ public class DoctorDAOImp implements Serializable, IDoctorDAO {
             }
         }
         return usuario;
-    }
-
-    @Override
+    } **/
+    
+    
+    // CODIGO PARA ELIMINAR(no se utilizan lista)
+    /**@Override
     public void modificarUsuario(Doctor unUsuario) {
         boolean encontrado = false;
         for (int i = 0; i < ListadoUsuarios.tablaUsuarios.length && encontrado != true; i++) {
@@ -47,9 +50,12 @@ public class DoctorDAOImp implements Serializable, IDoctorDAO {
             }
         }
 
-    }
-
-    @Override
+    }**/
+    
+    
+    
+    // CODIGO PARA ELIMINAR(no se utilizan lista)
+    /**@Override
     public Doctor obtenerUsuario(String nombreUsuario) {
         Doctor usuario = null;
         for (int i = 0; i < ListadoUsuarios.tablaUsuarios.length; i++) {
@@ -61,6 +67,6 @@ public class DoctorDAOImp implements Serializable, IDoctorDAO {
             }
         }
         return usuario;
-    }
+    }**/
 
 }
