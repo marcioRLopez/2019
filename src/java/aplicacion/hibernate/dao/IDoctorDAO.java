@@ -8,8 +8,8 @@ import aplicacion.modelo.dominio.Doctor;
  */
 public interface IDoctorDAO {
 
-    Doctor validarUsuario(String nombreUsuario, String password);
-
+    //Doctor validarUsuario(String nombreUsuario, String password);
+77
     void modificarUsuario(Doctor unUsuario);
 
     void create(Doctor doctor);
