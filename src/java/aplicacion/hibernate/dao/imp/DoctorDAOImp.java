@@ -1,27 +1,16 @@
 package aplicacion.hibernate.dao.imp;
 
-import aplicacion.hibernate.configuracion.HibernateUtil;
+
 import aplicacion.hibernate.dao.IDoctorDAO;
 import aplicacion.modelo.dominio.Doctor;
-//import aplicacion.modelo.util.ListadoUsuarios; // importante!!! hay que eliminar esta linea de codigo ya que no vamos a trabajar con una lista de usuarios
 import java.io.Serializable;
-import org.hibernate.Session;
-
+//import aplicacion.modelo.util.ListadoUsuarios; // importante!!! hay que eliminar esta linea de codigo ya que no vamos a trabajar con una lista de usuarios
 /**
  *
  * @author Grupo10
  */
-public class DoctorDAOImp implements Serializable, IDoctorDAO {
+public class DoctorDAOImp extends GenericDAOimp<Doctor, String> implements Serializable, IDoctorDAO {
 
-    @Override
-    public void create(Doctor doctor) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        session.save(doctor);
-        session.getTransaction().commit();
-        session.close();
-    }
-    
     // CODIGO PARA ELIMINAR(no se utilizan lista)
     /**@Override
     public Doctor validarUsuario(String nombreUsuario, String password) {
