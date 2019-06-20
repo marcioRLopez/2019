@@ -1,4 +1,4 @@
-package aplicacion.modelo.util;
+package aplicacion.modelo.util;  
 
 import aplicacion.modelo.dominio.Doctor;
 
