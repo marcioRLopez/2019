@@ -13,6 +13,6 @@ import java.io.Serializable;
  *
  * @author Alejandro
  */
-public class MedicamentoDAOImp extends GenericDAOImp<Medicamento, int> implements Serializable, IMedicamentoDAO{ // el mismo problema con el int
+public class MedicamentoDAOImp extends GenericDAOImp<Medicamento, Integer> implements Serializable, IMedicamentoDAO{ // el mismo problema con el int
   
 }
