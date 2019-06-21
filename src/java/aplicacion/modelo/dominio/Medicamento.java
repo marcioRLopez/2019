@@ -10,7 +10,7 @@ import java.util.Date;
 public class Medicamento  implements java.io.Serializable {
 
 
-     private int idMedicamento;
+     private int idMedicamento; // int deberia ser Integer?
      private String nombre;
      private Date fechaVencimiento;
      private String descripcion;
