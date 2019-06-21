@@ -12,7 +12,7 @@ public class Vacuna  implements java.io.Serializable {
      private int idVacuna; // Deberia ser Integer
      private String nombre;
      private String tipoVacuna;
-     private boolean estado;
+     private boolean estado;//??
 
     public Vacuna() {
     }

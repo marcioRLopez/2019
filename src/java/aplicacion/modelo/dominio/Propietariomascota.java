@@ -9,13 +9,13 @@ package aplicacion.modelo.dominio;
 public class Propietariomascota  implements java.io.Serializable {
 
 
-     private int dni;
+     private int dni;// grapper??
      private String nombre;
      private String apellido;
      private String direccion;
-     private int telefono;
+     private int telefono;// grapper??
      private String correo;
-     private boolean estado;
+     private boolean estado;//??
 
     public Propietariomascota() {
     }

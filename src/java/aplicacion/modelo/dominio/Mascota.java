@@ -18,7 +18,7 @@ public class Mascota  implements java.io.Serializable {
      private Date fechaNacimiento;
      private int peso;
      private byte estado;
-
+     // atributo de tipo mascota(???)
     public Mascota() {
     }
 

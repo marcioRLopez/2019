@@ -12,7 +12,7 @@ public class Doctor  implements java.io.Serializable {
      private String nombreUsuario;
      private String password;
      private String correoElectronico;
-     private boolean estado;
+     private boolean estado; //grapper??
      private String persona;
 
     public Doctor() {

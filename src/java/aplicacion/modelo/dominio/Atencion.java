@@ -14,10 +14,10 @@ public class Atencion  implements java.io.Serializable {
      private Date fechaAtencion;
      private String diagnostico;
      private String observacion;
-     private String mascota;
-     private String propietarioMascota;
-     private String medicamento;
-     private boolean estado;
+     private String mascota;//otro tipo de objeto???
+     private String propietarioMascota;//??
+     private String medicamento;//??
+     private boolean estado; //grapper?? 
 
     public Atencion() {
     }
