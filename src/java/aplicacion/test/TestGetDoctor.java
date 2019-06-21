@@ -16,9 +16,12 @@ import aplicacion.modelo.dominio.Doctor;
 public class TestGetDoctor {
     public static void main(String[] args) {
         IDoctorDAO doctorDAO = new DoctorDAOImp();
-        Doctor unDoctor = new Doctor("avega", "avega", "vega@gmail.com", true, "Vega, Ariel Alejandro");
-        doctorDAO.create(unDoctor);
+        //Doctor unDoctor = new Doctor("avega", "avega", "vega@gmail.com", true, "Vega, Ariel Alejandro");
+        //doctorDAO.create(unDoctor);
         //System.out.println("El nombre del usuario es: "+unDoctor.getNombreUsuario());
+        Doctor doctorEncontrado = null;
+        doctorEncontrado = doctorDAO.getDoctor("jose", "jose");
+        System.out.println("el doctor encontraso es" +doctorEncontrado.toString());
     }
     
 }

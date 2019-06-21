@@ -8,4 +8,6 @@ import aplicacion.modelo.dominio.Doctor;
  */
 public interface IDoctorDAO extends IGenericDAO<Doctor, String>{
     // ESPACIO PARA DEFINIR METODOS ABSTRACTOS ESPECIFICOS DE LA CLASE DOCTOR!!!!!
+    Doctor getDoctor(String nombre, String password);
+    
 }
