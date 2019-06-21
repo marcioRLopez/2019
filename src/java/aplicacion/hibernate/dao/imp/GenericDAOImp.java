@@ -14,13 +14,31 @@ import org.hibernate.Session;
  *
  * @author Alejandro
  */
-public class GenericDAOimp<T, ID extends  Serializable> implements IGenericDAO<T, ID>{
+public class GenericDAOImp<T, ID extends  Serializable> implements IGenericDAO<T, ID>{
 
     @Override
     public void create(T object) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(object);
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    @Override
+    public void delete(T object) {
+       Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(object);
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    @Override
+    public void update(T object) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(object);
         session.getTransaction().commit();
         session.close();
     }

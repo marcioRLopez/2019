@@ -11,6 +11,6 @@ package aplicacion.hibernate.dao;
  */
 public interface IGenericDAO<T, ID> {
     void create (T object);
-    //void delete (T object); Agregar este metodo luego, solo realizar la prueba de create
-    //void update (T object); "  "  "
+    void delete (T object);
+    void update (T object);
 }
