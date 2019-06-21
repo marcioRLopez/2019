@@ -9,7 +9,7 @@ package aplicacion.modelo.dominio;
 public class Vacuna  implements java.io.Serializable {
 
 
-     private int idVacuna;
+     private int idVacuna; // Deberia ser Integer
      private String nombre;
      private String tipoVacuna;
      private boolean estado;

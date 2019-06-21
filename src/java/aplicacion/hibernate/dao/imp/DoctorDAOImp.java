@@ -1,6 +1,5 @@
 package aplicacion.hibernate.dao.imp;
 
-
 import aplicacion.hibernate.dao.IDoctorDAO;
 import aplicacion.modelo.dominio.Doctor;
 import java.io.Serializable;
