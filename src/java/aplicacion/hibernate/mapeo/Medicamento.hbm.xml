@@ -3,7 +3,7 @@
 <!-- Generated 15/06/2019 05:38:02 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
   <class catalog="veterinaria2019" name="aplicacion.modelo.dominio.Medicamento" optimistic-lock="version" table="medicamento">
-    <id name="idMedicamento" type="int">
+    <id name="idMedicamento" type="Integer">
       <column name="id_medicamento"/>
       <generator class="assigned"/>
     </id>

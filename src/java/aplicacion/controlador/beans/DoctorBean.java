@@ -1,7 +1,7 @@
 package aplicacion.controlador.beans;
 
-import aplicacion.dao.IDoctorDAO;
-import aplicacion.dao.imp.DoctorDAOImp;
+import aplicacion.hibernate.dao.IDoctorDAO;
+import aplicacion.hibernate.dao.imp.DoctorDAOImp;
 import aplicacion.modelo.dominio.Doctor;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
