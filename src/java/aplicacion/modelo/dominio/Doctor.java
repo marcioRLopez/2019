@@ -10,19 +10,14 @@ public class Doctor  implements java.io.Serializable {
 
      private String nombreUsuario;
      private String password;
-     private String correoElectronico;
-     private boolean estado; //grapper??
-     private String persona;
+     
 
     public Doctor() {
     }
 
-    public Doctor(String nombreUsuario, String password, String correoElectronico, boolean estado, String persona) {
+    public Doctor(String nombreUsuario, String password) {
        this.nombreUsuario = nombreUsuario;
        this.password = password;
-       this.correoElectronico = correoElectronico;
-       this.estado = estado;
-       this.persona = persona;
     }
    
     public String getNombreUsuario() {
@@ -38,27 +33,6 @@ public class Doctor  implements java.io.Serializable {
     
     public void setPassword(String password) {
         this.password = password;
-    }
-    public String getCorreoElectronico() {
-        return this.correoElectronico;
-    }
-    
-    public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
-    }
-    public boolean isEstado() {
-        return this.estado;
-    }
-    
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
-    public String getPersona() {
-        return this.persona;
-    }
-    
-    public void setPersona(String persona) {
-        this.persona = persona;
     }
 
 
