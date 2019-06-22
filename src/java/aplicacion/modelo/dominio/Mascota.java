@@ -10,86 +10,105 @@ import java.util.Date;
 public class Mascota  implements java.io.Serializable {
 
 
-     private int idMascota;
+     private Integer idMascota;
      private String nombre;
      private String especie;
      private String sexo;
      private String raza;
      private Date fechaNacimiento;
-     private int peso;
-     private byte estado;
-     // atributo de tipo mascota(???)
+     private Float peso;
+     private Boolean estado;
+     private Vacuna vacuna;
+
     public Mascota() {
     }
 
-    public Mascota(int idMascota, String nombre, String especie, String sexo, String raza, Date fechaNacimiento, int peso, byte estado) {
-       this.idMascota = idMascota;
-       this.nombre = nombre;
-       this.especie = especie;
-       this.sexo = sexo;
-       this.raza = raza;
-       this.fechaNacimiento = fechaNacimiento;
-       this.peso = peso;
-       this.estado = estado;
+    public Mascota(Integer idMascota, String nombre, String especie, String sexo, String raza, Date fechaNacimiento, Float peso, Boolean estado, Vacuna vacuna) {
+        this.idMascota = idMascota;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.sexo = sexo;
+        this.raza = raza;
+        this.fechaNacimiento = fechaNacimiento;
+        this.peso = peso;
+        this.estado = estado;
+        this.vacuna = vacuna;
     }
-   
-    public int getIdMascota() {
-        return this.idMascota;
+
+    public Integer getIdMascota() {
+        return idMascota;
     }
-    
-    public void setIdMascota(int idMascota) {
+
+    public void setIdMascota(Integer idMascota) {
         this.idMascota = idMascota;
     }
+
     public String getNombre() {
-        return this.nombre;
+        return nombre;
     }
-    
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     public String getEspecie() {
-        return this.especie;
+        return especie;
     }
-    
+
     public void setEspecie(String especie) {
         this.especie = especie;
     }
+
     public String getSexo() {
-        return this.sexo;
+        return sexo;
     }
-    
+
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+
     public String getRaza() {
-        return this.raza;
+        return raza;
     }
-    
+
     public void setRaza(String raza) {
         this.raza = raza;
     }
+
     public Date getFechaNacimiento() {
-        return this.fechaNacimiento;
+        return fechaNacimiento;
     }
-    
+
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
-    public int getPeso() {
-        return this.peso;
+
+    public Float getPeso() {
+        return peso;
     }
-    
-    public void setPeso(int peso) {
+
+    public void setPeso(Float peso) {
         this.peso = peso;
     }
-    public byte getEstado() {
-        return this.estado;
+
+    public Boolean getEstado() {
+        return estado;
     }
-    
-    public void setEstado(byte estado) {
+
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 
+    public Vacuna getVacuna() {
+        return vacuna;
+    }
+
+    public void setVacuna(Vacuna vacuna) {
+        this.vacuna = vacuna;
+    }
+     
+     
+    
 
 
 

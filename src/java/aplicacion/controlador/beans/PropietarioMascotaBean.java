@@ -1,7 +1,7 @@
 package aplicacion.controlador.beans;
 
 
-import aplicacion.modelo.dominio.Propietariomascota;
+import aplicacion.modelo.dominio.PropietarioMascota;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -18,7 +18,7 @@ public class PropietarioMascotaBean implements Serializable{
     /**
      * atributo de tipo objeto
      */
-    public Propietariomascota propietarioMascota;
+    public PropietarioMascota propietarioMascota;
 
     /**
      * constructor por defecto de la clase
@@ -27,19 +27,19 @@ public class PropietarioMascotaBean implements Serializable{
      */
     public PropietarioMascotaBean() {
         if (propietarioMascota == null){
-            propietarioMascota = new Propietariomascota();
+            propietarioMascota = new PropietarioMascota();
         }
     }
 
     //SECCION DE GETTERS Y SETTERS
-    public Propietariomascota getPropietarioMascota() {
+    public PropietarioMascota getPropietarioMascota() {
         if(propietarioMascota == null){
-            propietarioMascota = new Propietariomascota();
+            propietarioMascota = new PropietarioMascota();
         }
             return propietarioMascota;
     }
 
-    public void setPropietarioMascota(Propietariomascota propietarioMascota) {
+    public void setPropietarioMascota(PropietarioMascota propietarioMascota) {
         this.propietarioMascota = propietarioMascota;
     }
     

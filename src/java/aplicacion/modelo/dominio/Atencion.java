@@ -1,7 +1,6 @@
 package aplicacion.modelo.dominio;
 // Generated 15/06/2019 05:37:58 PM by Hibernate Tools 4.3.1
 
-
 import java.util.Date;
 
 /**
@@ -10,86 +9,94 @@ import java.util.Date;
 public class Atencion  implements java.io.Serializable {
 
 
-     private String idAtencion;
-     private Date fechaAtencion;
+     private Integer idAtencionMedica;
+     private Date fechaAtencionMedica;
      private String diagnostico;
      private String observacion;
-     private String mascota;//otro tipo de objeto???
-     private String propietarioMascota;//??
-     private String medicamento;//??
-     private boolean estado; //grapper?? 
+     private Mascota mascota;
+     private PropietarioMascota propietarioMascota;
+     private Medicamento medicamento;
+     private Boolean estado; 
 
     public Atencion() {
     }
 
-    public Atencion(String idAtencion, Date fechaAtencion, String diagnostico, String observacion, String mascota, String propietarioMascota, String medicamento, boolean estado) {
-       this.idAtencion = idAtencion;
-       this.fechaAtencion = fechaAtencion;
-       this.diagnostico = diagnostico;
-       this.observacion = observacion;
-       this.mascota = mascota;
-       this.propietarioMascota = propietarioMascota;
-       this.medicamento = medicamento;
-       this.estado = estado;
-    }
-   
-    public String getIdAtencion() {
-        return this.idAtencion;
-    }
-    
-    public void setIdAtencion(String idAtencion) {
-        this.idAtencion = idAtencion;
-    }
-    public Date getFechaAtencion() {
-        return this.fechaAtencion;
-    }
-    
-    public void setFechaAtencion(Date fechaAtencion) {
-        this.fechaAtencion = fechaAtencion;
-    }
-    public String getDiagnostico() {
-        return this.diagnostico;
-    }
-    
-    public void setDiagnostico(String diagnostico) {
+    public Atencion(Integer idAtencionMedica, Date fechaAtencionMedica, String diagnostico, String observacion, Mascota mascota, PropietarioMascota propietarioMascota, Medicamento medicamento, Boolean estado) {
+        this.idAtencionMedica = idAtencionMedica;
+        this.fechaAtencionMedica = fechaAtencionMedica;
         this.diagnostico = diagnostico;
-    }
-    public String getObservacion() {
-        return this.observacion;
-    }
-    
-    public void setObservacion(String observacion) {
         this.observacion = observacion;
-    }
-    public String getMascota() {
-        return this.mascota;
-    }
-    
-    public void setMascota(String mascota) {
         this.mascota = mascota;
-    }
-    public String getPropietarioMascota() {
-        return this.propietarioMascota;
-    }
-    
-    public void setPropietarioMascota(String propietarioMascota) {
         this.propietarioMascota = propietarioMascota;
-    }
-    public String getMedicamento() {
-        return this.medicamento;
-    }
-    
-    public void setMedicamento(String medicamento) {
         this.medicamento = medicamento;
-    }
-    public boolean isEstado() {
-        return this.estado;
-    }
-    
-    public void setEstado(boolean estado) {
         this.estado = estado;
     }
 
+    public Integer getIdAtencionMedica() {
+        return idAtencionMedica;
+    }
+
+    public void setIdAtencionMedica(Integer idAtencionMedica) {
+        this.idAtencionMedica = idAtencionMedica;
+    }
+
+    public Date getFechaAtencionMedica() {
+        return fechaAtencionMedica;
+    }
+
+    public void setFechaAtencionMedica(Date fechaAtencionMedica) {
+        this.fechaAtencionMedica = fechaAtencionMedica;
+    }
+
+    public String getDiagnostico() {
+        return diagnostico;
+    }
+
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
+    public String getObservacion() {
+        return observacion;
+    }
+
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
+    }
+
+    public Mascota getMascota() {
+        return mascota;
+    }
+
+    public void setMascota(Mascota mascota) {
+        this.mascota = mascota;
+    }
+
+    public PropietarioMascota getPropietarioMascota() {
+        return propietarioMascota;
+    }
+
+    public void setPropietarioMascota(PropietarioMascota propietarioMascota) {
+        this.propietarioMascota = propietarioMascota;
+    }
+
+    public Medicamento getMedicamento() {
+        return medicamento;
+    }
+
+    public void setMedicamento(Medicamento medicamento) {
+        this.medicamento = medicamento;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
+    
 
 
 

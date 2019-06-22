@@ -8,7 +8,6 @@ package aplicacion.modelo.dominio;
  */
 public class Doctor  implements java.io.Serializable {
 
-     // estaria faltando idDoctor??????????
      private String nombreUsuario;
      private String password;
      private String correoElectronico;

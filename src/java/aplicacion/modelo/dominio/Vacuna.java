@@ -1,6 +1,9 @@
 package aplicacion.modelo.dominio;
 // Generated 15/06/2019 05:37:58 PM by Hibernate Tools 4.3.1
 
+import java.util.Date;
+
+
 
 
 /**
@@ -9,49 +12,74 @@ package aplicacion.modelo.dominio;
 public class Vacuna  implements java.io.Serializable {
 
 
-     private Integer idVacuna; // Deberia ser Integer
-     private String nombre;
-     private String tipoVacuna;
-     private boolean estado;//??
+     private Integer idVacuna;
+     private String nombreVacuna;
+     private String tipo;
+     private String lote;
+     private Date fecha;
+     private Boolean estado;
 
     public Vacuna() {
     }
 
-    public Vacuna(int idVacuna, String nombre, String tipoVacuna, boolean estado) {
-       this.idVacuna = idVacuna;
-       this.nombre = nombre;
-       this.tipoVacuna = tipoVacuna;
-       this.estado = estado;
-    }
-   
-    public int getIdVacuna() {
-        return this.idVacuna;
-    }
-    
-    public void setIdVacuna(int idVacuna) {
+    public Vacuna(Integer idVacuna, String nombreVacuna, String tipo, String lote, Date fecha, Boolean estado) {
         this.idVacuna = idVacuna;
-    }
-    public String getNombre() {
-        return this.nombre;
-    }
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    public String getTipoVacuna() {
-        return this.tipoVacuna;
-    }
-    
-    public void setTipoVacuna(String tipoVacuna) {
-        this.tipoVacuna = tipoVacuna;
-    }
-    public boolean isEstado() {
-        return this.estado;
-    }
-    
-    public void setEstado(boolean estado) {
+        this.nombreVacuna = nombreVacuna;
+        this.tipo = tipo;
+        this.lote = lote;
+        this.fecha = fecha;
         this.estado = estado;
     }
+
+    public Integer getIdVacuna() {
+        return idVacuna;
+    }
+
+    public void setIdVacuna(Integer idVacuna) {
+        this.idVacuna = idVacuna;
+    }
+
+    public String getNombreVacuna() {
+        return nombreVacuna;
+    }
+
+    public void setNombreVacuna(String nombreVacuna) {
+        this.nombreVacuna = nombreVacuna;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getLote() {
+        return lote;
+    }
+
+    public void setLote(String lote) {
+        this.lote = lote;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
+    
 
 
 

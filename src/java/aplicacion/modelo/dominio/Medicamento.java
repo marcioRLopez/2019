@@ -10,58 +10,64 @@ import java.util.Date;
 public class Medicamento  implements java.io.Serializable {
 
 
-     private Integer idMedicamento; // int deberia ser Integer?
-     private String nombre;
+     private Integer idMedicamento;
+     private String nombreMedicamento;
      private Date fechaVencimiento;
-     private String descripcion;
-     private boolean estado;
+     private String descripcionMedicamento;
+     private Boolean estado;
 
     public Medicamento() {
     }
 
-    public Medicamento(int idMedicamento, String nombre, Date fechaVencimiento, String descripcion, boolean estado) {
-       this.idMedicamento = idMedicamento;
-       this.nombre = nombre;
-       this.fechaVencimiento = fechaVencimiento;
-       this.descripcion = descripcion;
-       this.estado = estado;
+    public Medicamento(Integer idMedicamento, String nombreMedicamento, Date fechaVencimiento, String descripcionMedicamento, Boolean estado) {
+        this.idMedicamento = idMedicamento;
+        this.nombreMedicamento = nombreMedicamento;
+        this.fechaVencimiento = fechaVencimiento;
+        this.descripcionMedicamento = descripcionMedicamento;
+        this.estado = estado;
     }
-   
-    public int getIdMedicamento() {
-        return this.idMedicamento;
+
+    public Integer getIdMedicamento() {
+        return idMedicamento;
     }
-    
-    public void setIdMedicamento(int idMedicamento) {
+
+    public void setIdMedicamento(Integer idMedicamento) {
         this.idMedicamento = idMedicamento;
     }
-    public String getNombre() {
-        return this.nombre;
+
+    public String getNombreMedicamento() {
+        return nombreMedicamento;
     }
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+    public void setNombreMedicamento(String nombreMedicamento) {
+        this.nombreMedicamento = nombreMedicamento;
     }
+
     public Date getFechaVencimiento() {
-        return this.fechaVencimiento;
+        return fechaVencimiento;
     }
-    
+
     public void setFechaVencimiento(Date fechaVencimiento) {
         this.fechaVencimiento = fechaVencimiento;
     }
-    public String getDescripcion() {
-        return this.descripcion;
+
+    public String getDescripcionMedicamento() {
+        return descripcionMedicamento;
     }
-    
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+
+    public void setDescripcionMedicamento(String descripcionMedicamento) {
+        this.descripcionMedicamento = descripcionMedicamento;
     }
-    public boolean isEstado() {
-        return this.estado;
+
+    public Boolean getEstado() {
+        return estado;
     }
-    
-    public void setEstado(boolean estado) {
+
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
+
+    
 
 
 
