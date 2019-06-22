@@ -5,8 +5,7 @@
  */
 package aplicacion.controlador.beans.forms;
 
-import aplicacion.hibernate.dao.IDoctorDAO;
-import aplicacion.hibernate.dao.imp.DoctorDAOImp;
+
 import aplicacion.controlador.beans.DoctorBean;
 import java.io.Serializable;
 import javax.faces.application.FacesMessage;

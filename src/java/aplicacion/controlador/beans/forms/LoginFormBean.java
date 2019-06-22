@@ -1,7 +1,5 @@
 package aplicacion.controlador.beans.forms;
 
-import aplicacion.hibernate.dao.IDoctorDAO;
-import aplicacion.hibernate.dao.imp.DoctorDAOImp;
 import aplicacion.modelo.dominio.Doctor;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
