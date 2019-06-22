@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="aplicacion.modelo.dominio.Doctor" catalog="veterinaria2019" table="doctor" optimistic-lock="version">
+        <id name="nombreUsuario">
+            <column name="nombre_usuario" length="12"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="password" type="string">
+            <column name="password" length="255" not-null="true"/>
+        </property>
+        <property name="correoElectronico" type="string">
+            <column name="correo_electronico" length="255" not-null="true"/>
+        </property>
+        <property name="estado" type="boolean">
+            <column name="estado" not-null="true"/>
+        </property>
+        <property name="persona" type="string">
+            <column name="persona" length="100" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
