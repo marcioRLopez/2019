@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="aplicacion.modelo.dominio.Vacuna" catalog="veterinaria1" table="vacuna" optimistic-lock="version">
+        <id name="idVacuna" type="integer">
+            <column name="id_vacuna" length="12"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="nombreVacuna" type="string">
+            <column name="nombre_vacuna" length="100" not-null="true"/>
+        </property>
+        <property name="lote" type="string">
+            <column name="vac_lote" length="50" not-null="true"/>
+        </property>
+        <property name="fecha" type="date">
+            <column name="fech_vacuna" not-null="true"/>
+        </property>
+        <property name="estado" type="boolean">
+            <column name="estado_vacun" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="aplicacion.modelo.dominio.Mascota" catalog="veterinaria1" table="mascota" optimistic-lock="version">
+        <id name="idMascota" type="integer">
+            <column name="id_mascota" length="12"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="nombre" type="string">
+            <column name="masco_nombre" length="100" not-null="true"/>
+        </property>
+        <property name="especie" type="string">
+            <column name="masco_especie" length="50" not-null="true"/>
+        </property>
+        <property name="sexo" type="string">
+            <column name="masco_sexo" length="20" not-null="true"/>
+        </property>
+        <property name="raza" type="string">
+            <column name="masco_raza" length="50" not-null="true"/>
+        </property>
+        <property name="fechaNacimiento" type="date">
+            <column name="masco_fechaNac" not-null="true"/>
+        </property>
+        <property name="peso" type="float">
+            <column name="masco_peso" length="20" not-null="true"/>
+        </property>
+        <property name="estado" type="boolean">
+            <column name="masco_estado" not-null="true"/>
+        </property>
+        <many-to-one class="aplicacion.modelo.dominio.Vacuna" fetch="join" name="vacuna">
+            <column name="masc_vac" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

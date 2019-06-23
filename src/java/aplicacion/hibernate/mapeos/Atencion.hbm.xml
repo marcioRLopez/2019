@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="aplicacion.modelo.dominio.Atencion" catalog="veterinaria1" table="atencion" optimistic-lock="version">
+        <id name="idAtencionMedica" type="integer">
+            <column name="id_atenc_medica" length="12"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="fechaAtencionMedica" type="date">
+            <column name="fech_atenc_medica" length="100" not-null="true"/>
+        </property>
+        <property name="diagnostico" type="string">
+            <column name="diagnos_atenc_medica" length="50" not-null="true"/>
+        </property>
+        <property name="observacion" type="string">
+            <column name="observ_atenc_medica" length="20" not-null="true"/>
+        </property>
+        <property name="mascota" type="Mascota">
+            <column name="masco_atenc_medica" length="50" not-null="true"/>
+        </property>
+        <property name="propietarioMascota" type="PropietarioMascota">
+            <column name="propie_mascota" length="20" not-null="true"/>
+        </property>
+        <property name="medicamento" type="Medicamento">
+            <column name="medicamento" length="20" not-null="true"/>
+        </property>
+        <property name="estado" type="boolean">
+            <column name="atencion_estado" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
