@@ -15,15 +15,15 @@
         <property name="observacion" type="string">
             <column name="observ_atenc_medica" length="20" not-null="true"/>
         </property>
-        <property name="mascota" type="Mascota">
-            <column name="masco_atenc_medica" length="50" not-null="true"/>
-        </property>
-        <property name="propietarioMascota" type="PropietarioMascota">
-            <column name="propie_mascota" length="20" not-null="true"/>
-        </property>
-        <property name="medicamento" type="Medicamento">
-            <column name="medicamento" length="20" not-null="true"/>
-        </property>
+        <many-to-one class="aplicacion.modelo.dominio.Mascota" fetch="join" name="mascota">
+            <column name="masc_atencion" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="aplicacion.modelo.dominio.PropietarioMascota" fetch="join" name="propietarioMascota">
+            <column name="propie_masc_atencion" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="aplicacion.modelo.dominio.Medicamento" fetch="join" name="medicamento">
+            <column name="medic_atencion" not-null="true"/>
+        </many-to-one>
         <property name="estado" type="boolean">
             <column name="atencion_estado" not-null="true"/>
         </property>
