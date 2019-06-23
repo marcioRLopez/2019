@@ -8,5 +8,5 @@ import aplicacion.modelo.dominio.Doctor;
  */
 public class ListadoUsuarios {
 
-    public static Doctor[] tablaUsuarios = {new Doctor("clavedesol", "clavedesol")};
+    public static Doctor[] tablaUsuarios = {new Doctor("clavedesol", "clavedesol","usuario admin")};
 }

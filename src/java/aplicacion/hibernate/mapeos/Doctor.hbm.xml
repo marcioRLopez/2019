@@ -10,5 +10,8 @@
         <property name="password" type="string">
             <column name="usu_password" length="255" not-null="true"/>
         </property>
+        <property name="tipoUsuario" type="string">
+            <column name="usu_tipo_usuario" length="10" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>
