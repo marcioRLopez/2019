@@ -1,4 +1,4 @@
-package aplicacion.dao;
+package aplicacion.hibernate.dao;
 
 import aplicacion.modelo.dominio.Doctor;
 
@@ -6,6 +6,8 @@ import aplicacion.modelo.dominio.Doctor;
  *
  * @author EZEQUIEL
  */
+
+// esta interface trabaja sin IGeneriDAO
 public interface IDoctorDAO {
 
     /**

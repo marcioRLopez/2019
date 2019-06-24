@@ -1,6 +1,6 @@
-package aplicacion.dao.imp;
+package aplicacion.hibernate.dao.imp;
 
-import aplicacion.dao.IDoctorDAO;
+import aplicacion.hibernate.dao.IDoctorDAO;
 import aplicacion.hibernate.configuracion.HibernateUtil;
 import aplicacion.modelo.constantes.TipoDoctor;
 import aplicacion.modelo.dominio.Doctor;
@@ -13,6 +13,8 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author EZEQUIEL
  */
+
+// esta clase implementadora trabaja sin GeneriDAOImp
 public class DoctorDAOImp implements Serializable, IDoctorDAO {
 
     @Override
