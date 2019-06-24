@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="aplicacion.modelo.dominio.Vacuna" catalog="veterinaria1" table="vacuna" optimistic-lock="version">
+    <class name="aplicacion.modelo.dominio.Vacuna" catalog="veterinaria" table="vacuna" optimistic-lock="version">
         <id name="idVacuna" type="integer">
             <column name="id_vacuna" length="12"/>
             <generator class="assigned"/>
