@@ -5,10 +5,14 @@
  */
 package aplicacion.hibernate.dao.imp;
 
+import aplicacion.hibernate.dao.IMascotaDAO;
+import aplicacion.modelo.dominio.Mascota;
+import java.io.Serializable;
+
 /**
  *
  * @author Alejandro
  */
-public class PropietarioMascotaDAOImp {
+public class PropietarioMascotaDAOImp extends GenericDAOImp<Mascota, Integer> implements Serializable, IMascotaDAO{
     
 }

@@ -5,6 +5,8 @@
  */
 package aplicacion.hibernate.dao;
 
+import java.util.List;
+
 /**
  *
  * @author Alejandro
@@ -13,4 +15,5 @@ public interface IGenericDAO<T, ID> {
     void crear(T object);
     void eliminar(T object);
     void modificar(T object);
+    List<T> obtenerDatos(Class<T> object);
 }
