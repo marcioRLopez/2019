@@ -3,7 +3,7 @@
 
 <hibernate-mapping>
     <class name="aplicacion.modelo.dominio.PropietarioMascota" catalog="esquemavete19" table="propietario_mascota" optimistic-lock="version">
-        <id name="dni" type="integer">
+        <id name="dni" type="string">
             <column name="prop_dni" length="12"/>
             <generator class="assigned"/>
         </id>

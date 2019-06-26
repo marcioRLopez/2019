@@ -11,6 +11,11 @@ import aplicacion.modelo.dominio.PropietarioMascota;
  *
  * @author Alejandro
  */
-public interface IPropietarioMascotaDAO extends IGenericDAO<PropietarioMascota, Integer>{
-    
+public interface IPropietarioMascotaDAO {
+
+    void create(PropietarioMascota unPropietario);
+
+    void modificar(PropietarioMascota unPropietario);
+
+    PropietarioMascota obtenerPropietario(String unPropietario);
 }

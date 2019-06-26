@@ -11,6 +11,12 @@ import aplicacion.modelo.dominio.Vacuna;
  *
  * @author Alejandro
  */
-public interface IVacunaDAO extends IGenericDAO<Vacuna, Integer>{
+public interface IVacunaDAO {
+
+    void create(Vacuna vacuna);
+
+    void modificar();
     
+
+    Vacuna obtenerVacuna(String nombreVacuna);
 }

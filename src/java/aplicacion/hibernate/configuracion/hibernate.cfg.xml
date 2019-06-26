@@ -3,11 +3,14 @@
 
 <hibernate-configuration>
   <session-factory>
+      <property name="hibernate.hbm2ddl.auto">create</property>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/esquemavete19?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">rene.ezequiel.clavijo.REC2019</property>
-    <mapping resource="aplicacion/hibernate/mapeos/Doctor.hbm.xml"></mapping>
+    <property name="hibernate.connection.password">ReneEzequielClavijo2019</property>
+    <mapping resource="aplicacion/hibernate/mapeos/Doctor.hbm.xml"/>
+    <mapping resource="aplicacion/hibernate/mapeos/Vacuna.hbm.xml"/>
+    <mapping resource="aplicacion/hibernate/mapeos/PropietarioMascota"/>
   </session-factory>
 </hibernate-configuration>

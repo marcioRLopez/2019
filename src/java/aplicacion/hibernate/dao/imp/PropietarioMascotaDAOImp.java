@@ -1,18 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package aplicacion.hibernate.dao.imp;
 
-import aplicacion.hibernate.dao.IMascotaDAO;
-import aplicacion.modelo.dominio.Mascota;
-import java.io.Serializable;
+import aplicacion.hibernate.configuracion.HibernateUtil;
+import aplicacion.hibernate.dao.IPropietarioMascotaDAO;
 
-/**
- *
- * @author Alejandro
- */
-public class PropietarioMascotaDAOImp extends GenericDAOImp<Mascota, Integer> implements Serializable, IMascotaDAO{
+import aplicacion.modelo.dominio.PropietarioMascota;
+import java.io.Serializable;
+import org.hibernate.Session;
+
+
+public class PropietarioMascotaDAOImp implements Serializable, IPropietarioMascotaDAO{
+
+    @Override
+    public void create(PropietarioMascota unPropietario) {
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    }
+
+    @Override
+    public void modificar(PropietarioMascota unPropietario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public PropietarioMascota obtenerPropietario(String unPropietario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

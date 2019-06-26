@@ -9,7 +9,7 @@ package aplicacion.modelo.dominio;
 public class PropietarioMascota  implements java.io.Serializable {
 
 
-     private Integer dni;
+     private String dni;
      private String nombre;
      private String apellido;
      private String direccion;
@@ -20,7 +20,7 @@ public class PropietarioMascota  implements java.io.Serializable {
     public PropietarioMascota() {
     }
 
-    public PropietarioMascota(Integer dni, String nombre, String apellido, String direccion, String telefono, String correoElectronico, Boolean estado) {
+    public PropietarioMascota(String dni, String nombre, String apellido, String direccion, String telefono, String correoElectronico, Boolean estado) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -30,11 +30,11 @@ public class PropietarioMascota  implements java.io.Serializable {
         this.estado = estado;
     }
 
-    public Integer getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(Integer dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 

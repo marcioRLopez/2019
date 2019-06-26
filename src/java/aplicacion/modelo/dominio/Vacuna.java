@@ -8,7 +8,7 @@ import java.util.Date;
  */
 public class Vacuna implements java.io.Serializable {
 
-    private Integer idVacuna;
+    private String idVacuna;
     private String nombreVacuna;
     private String lote;
     private Date fecha;
@@ -17,7 +17,7 @@ public class Vacuna implements java.io.Serializable {
     public Vacuna() {
     }
 
-    public Vacuna(Integer idVacuna, String nombreVacuna, String lote, Date fecha, Boolean estado) {
+    public Vacuna(String idVacuna, String nombreVacuna, String lote, Date fecha, Boolean estado) {
         this.idVacuna = idVacuna;
         this.nombreVacuna = nombreVacuna;
         this.lote = lote;
@@ -25,11 +25,11 @@ public class Vacuna implements java.io.Serializable {
         this.estado = estado;
     }
 
-    public Integer getIdVacuna() {
+    public String getIdVacuna() {
         return idVacuna;
     }
 
-    public void setIdVacuna(Integer idVacuna) {
+    public void setIdVacuna(String idVacuna) {
         this.idVacuna = idVacuna;
     }
 
