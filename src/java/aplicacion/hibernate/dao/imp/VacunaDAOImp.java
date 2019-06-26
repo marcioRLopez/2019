@@ -6,19 +6,15 @@ import aplicacion.modelo.dominio.Vacuna;
 import java.io.Serializable;
 import org.hibernate.Session;
 
-/**
- *
- * @author Alejandro
- */
 public class VacunaDAOImp implements Serializable, IVacunaDAO {
 
     @Override
     public void create(Vacuna vacuna) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        session.save(vacuna);
-        session.getTransaction().commit();
-        session.close();
+//        Session session = HibernateUtil.getSessionFactory().openSession();
+//        session.beginTransaction();
+//        session.save(vacuna);
+//        session.getTransaction().commit();
+//        session.close();
     }
 
     @Override

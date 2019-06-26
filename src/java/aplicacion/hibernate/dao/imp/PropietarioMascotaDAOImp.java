@@ -1,28 +1,21 @@
 package aplicacion.hibernate.dao.imp;
 
 import aplicacion.hibernate.configuracion.HibernateUtil;
-import aplicacion.hibernate.dao.IPropietarioMascotaDAO;
+import aplicacion.hibernate.dao.IPropietarioDAO;
 
 import aplicacion.modelo.dominio.PropietarioMascota;
 import java.io.Serializable;
 import org.hibernate.Session;
 
-
-public class PropietarioMascotaDAOImp implements Serializable, IPropietarioMascotaDAO{
-
-    @Override
-    public void create(PropietarioMascota unPropietario) {
-    Session session = HibernateUtil.getSessionFactory().openSession();
-    }
+public class PropietarioMascotaDAOImp implements Serializable, IPropietarioDAO {
 
     @Override
-    public void modificar(PropietarioMascota unPropietario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void create(PropietarioMascota propietario) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(propietario);
+        session.getTransaction().commit();
+        session.close();
     }
 
-    @Override
-    public PropietarioMascota obtenerPropietario(String unPropietario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

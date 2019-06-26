@@ -10,7 +10,7 @@ import java.util.Date;
 public class Mascota  implements java.io.Serializable {
 
 
-     private Integer idMascota;
+     private String idMascota;
      private String nombre;
      private String especie;
      private String sexo;
@@ -23,7 +23,18 @@ public class Mascota  implements java.io.Serializable {
     public Mascota() {
     }
 
-    public Mascota(Integer idMascota, String nombre, String especie, String sexo, String raza, Date fechaNacimiento, Float peso, Boolean estado, Vacuna vacuna) {
+    public Mascota(String idMascota, String nombre, String especie, String sexo, String raza, Date fechaNacimiento, Boolean estado, Vacuna vacuna) {
+        this.idMascota = idMascota;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.sexo = sexo;
+        this.raza = raza;
+        this.fechaNacimiento = fechaNacimiento;
+        this.estado = estado;
+        this.vacuna = vacuna;
+    }
+
+    public Mascota(String idMascota, String nombre, String especie, String sexo, String raza, Date fechaNacimiento, Float peso, Boolean estado, Vacuna vacuna) {
         this.idMascota = idMascota;
         this.nombre = nombre;
         this.especie = especie;
@@ -35,11 +46,11 @@ public class Mascota  implements java.io.Serializable {
         this.vacuna = vacuna;
     }
 
-    public Integer getIdMascota() {
+    public String getIdMascota() {
         return idMascota;
     }
 
-    public void setIdMascota(Integer idMascota) {
+    public void setIdMascota(String idMascota) {
         this.idMascota = idMascota;
     }
 

@@ -2,9 +2,9 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="aplicacion.modelo.dominio.PropietarioMascota" catalog="esquemavete19" table="propietario_mascota" optimistic-lock="version">
+    <class name="aplicacion.modelo.dominio.PropietarioMascota" catalog="esquemavete19" table="propietario" optimistic-lock="version">
         <id name="dni" type="string">
-            <column name="prop_dni" length="12"/>
+            <column name="prop_dni" length="20"/>
             <generator class="assigned"/>
         </id>
         <property name="nombre" type="string">

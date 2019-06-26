@@ -2,8 +2,8 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="aplicacion.modelo.dominio.Mascota" catalog="esquemavete19" table="mascota" optimistic-lock="version">
-        <id name="idMascota" type="integer">
-            <column name="id_mascota" length="12"/>
+        <id name="idMascota" type="String">
+            <column name="id_mascota" length="20"/>
             <generator class="assigned"/>
         </id>
         <property name="nombre" type="string">

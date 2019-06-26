@@ -5,14 +5,25 @@
  */
 package aplicacion.hibernate.dao.imp;
 
+import aplicacion.hibernate.configuracion.HibernateUtil;
 import aplicacion.hibernate.dao.IAtencionDAO;
 import aplicacion.modelo.dominio.Atencion;
 import java.io.Serializable;
+import org.hibernate.Session;
 
 /**
  *
  * @author Alejandro
  */
-public class AtencionDAOImp extends GenericDAOImp<Atencion, Integer> implements Serializable, IAtencionDAO{
-    
+public class AtencionDAOImp implements Serializable, IAtencionDAO {
+
+    @Override
+    public void create(Atencion atencion) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(atencion);
+        session.getTransaction().commit();
+        session.close();
+    }
+
 }

@@ -10,7 +10,7 @@ import java.util.Date;
 public class Medicamento  implements java.io.Serializable {
 
 
-     private Integer idMedicamento;
+     private String idMedicamento;
      private String nombreMedicamento;
      private Date fechaVencimiento;
      private String descripcionMedicamento;
@@ -19,7 +19,7 @@ public class Medicamento  implements java.io.Serializable {
     public Medicamento() {
     }
 
-    public Medicamento(Integer idMedicamento, String nombreMedicamento, Date fechaVencimiento, String descripcionMedicamento, Boolean estado) {
+    public Medicamento(String idMedicamento, String nombreMedicamento, Date fechaVencimiento, String descripcionMedicamento, Boolean estado) {
         this.idMedicamento = idMedicamento;
         this.nombreMedicamento = nombreMedicamento;
         this.fechaVencimiento = fechaVencimiento;
@@ -27,11 +27,11 @@ public class Medicamento  implements java.io.Serializable {
         this.estado = estado;
     }
 
-    public Integer getIdMedicamento() {
+    public String getIdMedicamento() {
         return idMedicamento;
     }
 
-    public void setIdMedicamento(Integer idMedicamento) {
+    public void setIdMedicamento(String idMedicamento) {
         this.idMedicamento = idMedicamento;
     }
 

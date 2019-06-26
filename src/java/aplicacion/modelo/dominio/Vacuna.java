@@ -17,6 +17,10 @@ public class Vacuna implements java.io.Serializable {
     public Vacuna() {
     }
 
+    public Vacuna(String idVacuna) {
+        this.idVacuna = idVacuna;
+    }
+
     public Vacuna(String idVacuna, String nombreVacuna, String lote, Date fecha, Boolean estado) {
         this.idVacuna = idVacuna;
         this.nombreVacuna = nombreVacuna;
