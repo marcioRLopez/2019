@@ -8,22 +8,22 @@
             <generator class="assigned"/>
         </id>
         <property name="nombre" type="string">
-            <column name="prop_nombre" length="100" not-null="true"/>
+            <column name="prop_nombre" length="100" not-null="false"/>
         </property>
         <property name="apellido" type="string">
-            <column name="prop_apellido" length="50" not-null="true"/>
+            <column name="prop_apellido" length="50" not-null="false"/>
         </property>
         <property name="direccion" type="string">
-            <column name="prop_direccion" length="100" not-null="true"/>
+            <column name="prop_direccion" length="100" not-null="false"/>
         </property>
         <property name="telefono" type="string">
-            <column name="prop_telefono" length="50" not-null="true"/>
+            <column name="prop_telefono" length="50" not-null="false"/>
         </property>
         <property name="correoElectronico" type="string">
-            <column name="prop_email" length="100" not-null="true"/>
+            <column name="prop_email" length="100" not-null="false"/>
         </property>
         <property name="estado" type="boolean">
-            <column name="prop_estado" not-null="true"/>
+            <column name="prop_estado" not-null="false"/>
         </property>
     </class>
 </hibernate-mapping>

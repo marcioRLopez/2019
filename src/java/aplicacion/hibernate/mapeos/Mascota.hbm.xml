@@ -7,28 +7,28 @@
             <generator class="assigned"/>
         </id>
         <property name="nombre" type="string">
-            <column name="masco_nombre" length="100" not-null="true"/>
+            <column name="masco_nombre" length="25" not-null="false"/>
         </property>
         <property name="especie" type="string">
-            <column name="masco_especie" length="50" not-null="true"/>
+            <column name="masco_especie" length="30" not-null="false"/>
         </property>
         <property name="sexo" type="string">
-            <column name="masco_sexo" length="20" not-null="true"/>
+            <column name="masco_sexo" length="20" not-null="false"/>
         </property>
         <property name="raza" type="string">
-            <column name="masco_raza" length="50" not-null="true"/>
+            <column name="masco_raza" length="30" not-null="false"/>
         </property>
         <property name="fechaNacimiento" type="date">
-            <column name="masco_fechaNac" not-null="true"/>
+            <column name="masco_fechaNac" not-null="false"/>
         </property>
         <property name="peso" type="float">
-            <column name="masco_peso" length="20" not-null="true"/>
+            <column name="masco_peso" length="20" not-null="false"/>
         </property>
         <property name="estado" type="boolean">
-            <column name="masco_estado" not-null="true"/>
+            <column name="masco_estado" not-null="false"/>
         </property>
         <many-to-one class="aplicacion.modelo.dominio.Vacuna" fetch="join" name="vacuna">
-            <column name="masc_vac" not-null="true"/>
+            <column name="id_vacuna" not-null="false"/>
         </many-to-one>
     </class>
 </hibernate-mapping>

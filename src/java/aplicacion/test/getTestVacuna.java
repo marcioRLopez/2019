@@ -12,16 +12,17 @@ import java.util.Date;
  */
 public class getTestVacuna {
 
-    public static void main(String[] args) {
-        Vacuna unaVacuna = new Vacuna();
-        IVacunaDAO vacunaDAO = new VacunaDAOImp();
-        
-        unaVacuna.setIdVacuna("1234");
-        unaVacuna.setNombreVacuna("aniRavica");
-        unaVacuna.setLote("MMM2");
-        unaVacuna.setFecha(Date.from(Instant.now()));
-        unaVacuna.setEstado(Boolean.TRUE);
-        
-        vacunaDAO.create(unaVacuna);
-    }
+//    public static void main(String[] args) {
+//        System.out.println("hola");
+//        Vacuna unaVacuna = new Vacuna();
+//        IVacunaDAO vacunaDAO = new VacunaDAOImp();
+//        
+//        unaVacuna.setIdVacuna("1234");
+//        unaVacuna.setNombreVacuna("aniRavica");
+//        unaVacuna.setLote("MMM2");
+//        unaVacuna.setFecha(Date.from(Instant.now()));
+//        unaVacuna.setEstado(Boolean.TRUE);
+//        
+//        vacunaDAO.create(unaVacuna);
+//    }
 }

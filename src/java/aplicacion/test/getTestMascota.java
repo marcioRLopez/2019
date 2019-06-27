@@ -12,20 +12,21 @@ import java.util.Date;
  * @author clavedesol
  */
 public class getTestMascota {
-    public static void main(String[] args) {
-        Mascota ma = new Mascota();
-        IMascotaDAO madao =new MascotaDAOImp();
-        Vacuna va = new Vacuna("445","ravic","4444a",Date.from(Instant.now()),true);
-        
-        ma.setIdMascota("11V");
-        ma.setNombre("PAQUITA");
-        ma.setEspecie("perro");
-        ma.setSexo("hembra");
-        ma.setRaza("OVEJERO");
-        ma.setFechaNacimiento(Date.from(Instant.now()));
-        ma.setPeso(Float.MAX_VALUE);
-        ma.setEstado(Boolean.TRUE);
-        ma.setVacuna(va);
-        madao.create(ma);
-    }
+//    public static void main(String[] args) {
+//        
+//        Mascota ma = new Mascota();
+//        IMascotaDAO madao =new MascotaDAOImp();
+//        Vacuna va = new Vacuna("445","ravic","4444a",Date.from(Instant.now()),true);
+//        
+//        ma.setIdMascota("11V");
+//        ma.setNombre("PAQUITA");
+//        ma.setEspecie("perro");
+//        ma.setSexo("hembra");
+//        ma.setRaza("OVEJERO");
+//        ma.setFechaNacimiento(Date.from(Instant.now()));
+//        ma.setPeso(Float.NaN);
+//        ma.setEstado(Boolean.TRUE);
+//        ma.setVacuna(va);
+//        madao.create(ma);
+//    }
 }

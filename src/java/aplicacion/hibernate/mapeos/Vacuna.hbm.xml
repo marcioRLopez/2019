@@ -7,16 +7,16 @@
             <generator class="assigned"/>
         </id>
         <property name="nombreVacuna" type="string">
-            <column name="nombre_vacuna" length="100" not-null="true"/>
+            <column name="nombre_vacuna" length="100" not-null="false"/>
         </property>
         <property name="lote" type="string">
-            <column name="vac_lote" length="50" not-null="true"/>
+            <column name="vac_lote" length="50" not-null="false"/>
         </property>
         <property name="fecha" type="date">
-            <column name="fech_vacuna" not-null="true"/>
+            <column name="fech_vacuna" not-null="false"/>
         </property>
         <property name="estado" type="boolean">
-            <column name="estado_vacun" not-null="true"/>
+            <column name="estado_vacun" not-null="false"/>
         </property>
     </class>
 </hibernate-mapping>
