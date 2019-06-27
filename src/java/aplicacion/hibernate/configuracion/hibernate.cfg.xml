@@ -13,12 +13,8 @@
     <mapping resource="aplicacion/hibernate/mapeos/Vacuna.hbm.xml"></mapping>
     <mapping resource="aplicacion/hibernate/mapeos/Medicamento.hbm.xml"></mapping>
     <mapping resource="aplicacion/hibernate/mapeos/PropietarioMascota.hbm.xml"></mapping>
-<!--
-    
-    
     <mapping resource="aplicacion/hibernate/mapeos/Mascota.hbm.xml"></mapping>
-    
     <mapping resource="aplicacion/hibernate/mapeos/Atencion.hbm.xml"></mapping>
--->
+
   </session-factory>
 </hibernate-configuration>

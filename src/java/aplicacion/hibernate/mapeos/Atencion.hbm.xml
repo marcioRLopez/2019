@@ -16,7 +16,7 @@
             <column name="observ_atenc_medica" length="20" not-null="true"/>
         </property>
         <many-to-one class="aplicacion.modelo.dominio.Mascota" fetch="join" name="mascota">
-            <column name="masc_atencion" not-null="true"/>
+            <column name="mascota_atenc" not-null="true"/>
         </many-to-one>
         <many-to-one class="aplicacion.modelo.dominio.PropietarioMascota" fetch="join" name="propietarioMascota">
             <column name="propie_masc_atencion" not-null="true"/>

@@ -19,11 +19,11 @@ public class getTestAtencion {
 //    public static void main(String[] args) {
 //        Atencion a = new Atencion();
 //        IAtencionDAO adao = new AtencionDAOImp();
-//        Vacuna v = new Vacuna();
-//        Mascota ms = new Mascota("34","tina","perro","h","pitbl",Date.from(Instant.now()),true,v);
-//        PropietarioMascota pm = new PropietarioMascota("34765765","pablo","mamani","calle 2","2345645","@hotmail",true);
-//        Medicamento md = new Medicamento("123","curaPata",Date.from(Instant.now()),"pastilla",true);
-//        
+//        Vacuna v = new Vacuna("AB1", "AntiRabica", "hhhhjj", Date.from(Instant.now()), true);
+//        Mascota ms = new Mascota("2222", "tina", "can", "h", "pitbl", Date.from(Instant.now()), 4, true, v);
+//        PropietarioMascota pm = new PropietarioMascota("34765765", "pablo", "mamani", "calle 2", "2345645", "@hotmail", true);
+//        Medicamento md = new Medicamento("123", "curaPata", Date.from(Instant.now()), "pastilla", true);
+//
 //        a.setIdAtencionMedica("12");
 //        a.setFechaAtencionMedica(Date.from(Instant.now()));
 //        a.setDiagnostico("reservado");
@@ -32,7 +32,7 @@ public class getTestAtencion {
 //        a.setPropietarioMascota(pm);
 //        a.setMedicamento(md);
 //        a.setEstado(Boolean.TRUE);
-//        
+//
 //        adao.create(a);
 //    }
 }
