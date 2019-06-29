@@ -110,7 +110,7 @@
                                     <p:commandButton id="btnCerrarNuevoPropieterio"
                                                      value="SALIR"
                                                      oncomplete="PF('altaPropietario').hide()"/>
-                                    <p:commandButton id="btnNuevoPropietario" value="GRABAR" update=":grwMensajePropietarios"
+                                    <p:commandButton id="btnNuevoPropietario" value="GUARDAR" update=":grwMensajePropietarios"
                                                      actionListener="#{propietarioMascotaFormBean.visualizarVentanaConfirmarAlta()}"/>
                                 </h:panelGrid>
                             </p:dialog>
@@ -170,10 +170,7 @@
                                             <f:validator validatorId="emailValidador"/>
                                         </p:inputText>
                                     </p:outputLabel>
-
-
-
-                                    <p:commandButton id="btnActualizarPropietario" value="GRABAR" update=":grwMensajePropietarios" 
+                                    <p:commandButton id="btnActualizarPropietario" value="GUARDAR" update=":grwMensajePropietarios" 
                                                      actionListener="#{propietarioMascotaFormBean.visualizarVentanaConfirmaModificacion()}" />
 
                                     <p:commandButton id="btnEliminarPropietario" value="ELIMINAR PROPIETARIO" icon="ui-icon-trash"

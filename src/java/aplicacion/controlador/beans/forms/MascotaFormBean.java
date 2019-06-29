@@ -1,6 +1,6 @@
 package aplicacion.controlador.beans.forms;
 
-import aplicacion.controlador.beans.PacienteBean;
+import aplicacion.controlador.beans.MascotaBean;
 import aplicacion.modelo.dominio.PropietarioMascota;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -16,10 +16,10 @@ import org.primefaces.model.UploadedFile;
  */
 @ManagedBean
 @SessionScoped
-public class PacienteFormBean {
+public class MascotaFormBean {
 
     @ManagedProperty(value = "#{pacienteBean}")
-    private PacienteBean pacienteBean;
+    private MascotaBean pacienteBean;
     private UploadedFile file = null;
     private List<PropietarioMascota> propietarios;
     private StreamedContent fotoPaciente;
@@ -31,20 +31,20 @@ public class PacienteFormBean {
 
     }
 
-    public PacienteFormBean() {
+    public MascotaFormBean() {
     }
 
     /**
      * @return the pacienteBean
      */
-    public PacienteBean getPacienteBean() {
+    public MascotaBean getPacienteBean() {
         return pacienteBean;
     }
 
     /**
      * @param pacienteBean the pacienteBean to set
      */
-    public void setPacienteBean(PacienteBean pacienteBean) {
+    public void setPacienteBean(MascotaBean pacienteBean) {
         this.pacienteBean = pacienteBean;
     }
 

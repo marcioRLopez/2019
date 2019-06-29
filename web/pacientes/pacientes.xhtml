@@ -17,7 +17,7 @@
                              widgetVar="mensajePaciente"/>
                     <p:panel id="pnlPacientes" rendered="#{loginFormBean.verificarSesion()}">
                         <h:form id="frmTabla" enctype="multipart/form-data">
-                            <p:dataTable id="tblPacientes" value="#{pacienteFormBean}" var="paciente" rows="3">
+                            <p:dataTable id="tblPacientes" value="#{mascotaFormBean}" var="paciente" rows="3">
 
                                 <p:column headerText="ID Paciente" width="40">
                                     <p:outputLabel value="" ></p:outputLabel>
@@ -77,33 +77,33 @@
                             <p:panelGrid columns="2">
                                 <p:outputLabel for="txtPacienteID" value="ID Paciente: " />
                                 <p:inputText id="txtPacienteID" required="true" size="4" maxlength="4"
-                                             value="#{pacienteFormBean}" />
+                                             value="#{mascotaFormBean}" />
 
                                 <p:outputLabel for="txtNroHistoriaClinica" value="N° H.Clínica: " />
                                 <p:inputText id="txtNroHistoriaClinica" required="true" size="10" maxlength="10"
-                                             value="#{pacienteFormBean.pacienteBean}" />
+                                             value="#{mascotaFormBean.pacienteBean}" />
 
                                 <p:outputLabel for="txtNombre" value="Nombre: " />
                                 <p:inputText id="txtNombre" required="true" size="20" maxlength="20"
-                                             value="#{pacienteFormBean.pacienteBean}" />
+                                             value="#{mascotaFormBean.pacienteBean}" />
 
                                 <p:outputLabel for="txtFecNacimiento" value="Fecha de Nacimiento: " />
                                 <p:calendar id="txtFecNacimiento" pattern="dd-MM-yyyy" required="true" size="10" maxlength="10"
-                                            locale="es" maxdate="#{pacienteFormBean}"
-                                            value="#{pacienteFormBean.pacienteBean}" />
+                                            locale="es" maxdate="#{mascotaFormBean}"
+                                            value="#{mascotaFormBean.pacienteBean}" />
 
                                 <p:outputLabel for="txtEspecie" value="Especie: " />
                                 <p:inputText id="txtEspecie" required="true" size="20" maxlength="20"
-                                             value="#{pacienteFormBean.pacienteBean}" />
+                                             value="#{mascotaFormBean.pacienteBean}" />
                                 <p:outputLabel for="txtSexo" value="Sexo"></p:outputLabel>
-                                <p:selectOneRadio id="txtSexo" value="#{pacienteFormBean}">
+                                <p:selectOneRadio id="txtSexo" value="#{mascotaFormBean}">
                                     <f:selectItem itemLabel="Macho" itemValue="MACHO"></f:selectItem>
                                     <f:selectItem itemLabel="Hembra" itemValue="HEMBRA"></f:selectItem>
                                 </p:selectOneRadio>
 
                                 <p:outputLabel for="txtPropietario" value="Propietario: " />
                                 <h:selectOneMenu id="txtPropietario" value="" >
-                                    <f:selectItems value="#{pacienteFormBean}" var="pac"
+                                    <f:selectItems value="#{mascotaFormBean}" var="pac"
                                                    itemLabel=""
                                                    itemValue="" />
                                 </h:selectOneMenu>
@@ -112,8 +112,8 @@
 
 
 
-                                <p:panel rendered="#{pacienteFormBean.pacienteBean.paciente.conFoto}">
-                                    <p:graphicImage width="50" value="#{pacienteFormBean.archivoFoto}" height="80" cache="false" rendered="#{paciente.conFoto}">
+                                <p:panel rendered="#{mascotaFormBean.pacienteBean.paciente.conFoto}">
+                                    <p:graphicImage width="50" value="#{mascotaFormBean.archivoFoto}" height="80" cache="false" rendered="#{paciente.conFoto}">
                                         <f:param name="id" value=""/>
                                     </p:graphicImage>
                                 </p:panel>
@@ -137,40 +137,40 @@
 
                                 <p:outputLabel for="txtPacienteID" value="ID Paciente: " />
                                 <p:inputText id="txtPacienteID" required="true" size="4" maxlength="4"
-                                             value="#{pacienteFormBean.pacienteBean}" />
+                                             value="#{mascotaFormBean.pacienteBean}" />
 
                                 <p:outputLabel for="txtNroHistoriaClinica" value="N° H.Clínica " />
                                 <p:inputText id="txtNroHistoriaClinica" required="true" size="10" maxlength="10"
-                                             value="#{pacienteFormBean.pacienteBean}" />
+                                             value="#{mascotaFormBean.pacienteBean}" />
 
                                 <p:outputLabel for="txtNombre" value="Nombre: " />
                                 <p:inputText id="txtNombre" required="true" size="20" maxlength="20"
-                                             value="#{pacienteFormBean.pacienteBean}" />
+                                             value="#{mascotaFormBean.pacienteBean}" />
 
                                 <p:outputLabel for="txtFecNacimiento" value="Fecha de Nacimiento: " />
                                 <p:calendar id="txtFecNacimiento" pattern="dd-MM-yyyy" required="true" size="10" maxlength="10"
-                                            locale="es" maxdate="#{pacienteFormBean}"
-                                            value="#{pacienteFormBean.pacienteBean}" />
+                                            locale="es" maxdate="#{mascotaFormBean}"
+                                            value="#{mascotaFormBean.pacienteBean}" />
 
                                 <p:outputLabel for="txtEspecie" value="Especie: " />
                                 <p:inputText id="txtEspecie" required="true" size="20" maxlength="20"
-                                             value="#{pacienteFormBean.pacienteBean}" />
+                                             value="#{mascotaFormBean.pacienteBean}" />
 
                                 <p:outputLabel for="txtSexo" value="Sexo: "/>
                                 <p:inputText id="txtSexo" required="true" size="8" maxlength="1"
-                                             value="#{pacienteFormBean.pacienteBean}" />
+                                             value="#{mascotaFormBean.pacienteBean}" />
 
                                 <p:outputLabel for="txtPropietario" value="Propietario: " />
-                                <h:selectOneMenu id="txtPropietario" value="#{pacienteFormBean.pacienteBean}" >
-                                    <f:selectItems value="#{pacienteFormBean}" var="pac"
+                                <h:selectOneMenu id="txtPropietario" value="#{mascotaFormBean.pacienteBean}" >
+                                    <f:selectItems value="#{mascotaFormBean}" var="pac"
                                                    itemLabel=""
                                                    itemValue="" />
                                 </h:selectOneMenu>
 
-                                <p:panel rendered="#{pacienteFormBean.pacienteBean}">
-                                    <p:graphicImage width="80" value="#{pacienteFormBean}" height="80" cache="false"
-                                                    rendered="#{pacienteFormBean.pacienteBean}" >
-                                        <f:param name="id" value="#{pacienteFormBean.pacienteBean}"/>
+                                <p:panel rendered="#{mascotaFormBean.pacienteBean}">
+                                    <p:graphicImage width="80" value="#{mascotaFormBean}" height="80" cache="false"
+                                                    rendered="#{mascotaFormBean.pacienteBean}" >
+                                        <f:param name="id" value="#{mascotaFormBean.pacienteBean}"/>
                                     </p:graphicImage>
                                 </p:panel>
 
