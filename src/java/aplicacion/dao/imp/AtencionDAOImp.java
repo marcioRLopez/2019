@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacion.hibernate.dao.imp;
+package aplicacion.dao.imp;
 
 import aplicacion.hibernate.configuracion.HibernateUtil;
-import aplicacion.hibernate.dao.IMedicamentoDAO;
-import aplicacion.modelo.dominio.Medicamento;
+import aplicacion.hibernate.dao.IAtencionDAO;
+import aplicacion.modelo.dominio.Atencion;
 import java.io.Serializable;
 import org.hibernate.Session;
 
@@ -15,13 +15,13 @@ import org.hibernate.Session;
  *
  * @author Alejandro
  */
-public class MedicamentoDAOImp implements Serializable, IMedicamentoDAO {
+public class AtencionDAOImp implements Serializable, IAtencionDAO {
 
     @Override
-    public void create(Medicamento medicamento) {
+    public void create(Atencion atencion) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(medicamento);
+        session.save(atencion);
         session.getTransaction().commit();
         session.close();
     }

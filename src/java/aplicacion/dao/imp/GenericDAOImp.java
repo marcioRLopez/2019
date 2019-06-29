@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacion.hibernate.dao.imp;
+package aplicacion.dao.imp;
 
 import aplicacion.hibernate.configuracion.HibernateUtil;
 import aplicacion.hibernate.dao.IGenericDAO;

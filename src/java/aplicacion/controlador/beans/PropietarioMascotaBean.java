@@ -1,46 +1,41 @@
 package aplicacion.controlador.beans;
 
-
 import aplicacion.modelo.dominio.PropietarioMascota;
-import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 /**
  *
- * @author GRUPO10
- * Clase bean de la clase PropietarioMascota
- * necesaria para hacer la conexion con la paginaweb
+ * @author EZEQUIEL
  */
 @ManagedBean
 @ViewScoped
-public class PropietarioMascotaBean implements Serializable{
-    /**
-     * atributo de tipo objeto
-     */
-    public PropietarioMascota propietarioMascota;
+public class PropietarioMascotaBean {
 
-    /**
-     * constructor por defecto de la clase
-     * utiliza un metodo if que si el propietarioMascota 
-     * no existe se crea un nuevo
-     */
+    private PropietarioMascota propietarioMascota;
+
     public PropietarioMascotaBean() {
-        if (propietarioMascota == null){
+        if (propietarioMascota == null) {
             propietarioMascota = new PropietarioMascota();
         }
     }
 
-    //SECCION DE GETTERS Y SETTERS
+    /**
+     * @return the propietarioMascota
+     */
     public PropietarioMascota getPropietarioMascota() {
-        if(propietarioMascota == null){
+        if (propietarioMascota == null) {
             propietarioMascota = new PropietarioMascota();
         }
-            return propietarioMascota;
+
+        return propietarioMascota;
     }
 
+    /**
+     * @param propietarioMascota the propietarioMascota to set
+     */
     public void setPropietarioMascota(PropietarioMascota propietarioMascota) {
         this.propietarioMascota = propietarioMascota;
     }
-    
+
 }

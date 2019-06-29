@@ -1,7 +1,7 @@
 package aplicacion.test;
 
 import aplicacion.hibernate.dao.IDoctorDAO;
-import aplicacion.hibernate.dao.imp.DoctorDAOImp;
+import aplicacion.dao.imp.DoctorDAOImp;
 import aplicacion.modelo.constantes.TipoDoctor;
 import aplicacion.modelo.dominio.Doctor;
 

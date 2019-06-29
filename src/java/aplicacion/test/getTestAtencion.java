@@ -1,7 +1,7 @@
 package aplicacion.test;
 
 import aplicacion.hibernate.dao.IAtencionDAO;
-import aplicacion.hibernate.dao.imp.AtencionDAOImp;
+import aplicacion.dao.imp.AtencionDAOImp;
 import aplicacion.modelo.dominio.Atencion;
 import aplicacion.modelo.dominio.Mascota;
 import aplicacion.modelo.dominio.Medicamento;

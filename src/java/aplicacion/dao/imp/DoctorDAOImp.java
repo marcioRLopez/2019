@@ -1,4 +1,4 @@
-package aplicacion.hibernate.dao.imp;
+package aplicacion.dao.imp;
 
 import aplicacion.hibernate.dao.IDoctorDAO;
 import aplicacion.hibernate.configuracion.HibernateUtil;

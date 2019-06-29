@@ -1,7 +1,7 @@
 package aplicacion.test;
 
 import aplicacion.hibernate.dao.IMascotaDAO;
-import aplicacion.hibernate.dao.imp.MascotaDAOImp;
+import aplicacion.dao.imp.MascotaDAOImp;
 import aplicacion.modelo.dominio.Mascota;
 import aplicacion.modelo.dominio.Vacuna;
 import java.time.Instant;

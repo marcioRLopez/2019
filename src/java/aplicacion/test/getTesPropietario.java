@@ -2,7 +2,7 @@ package aplicacion.test;
 
 
 import aplicacion.hibernate.dao.IPropietarioDAO;
-import aplicacion.hibernate.dao.imp.PropietarioMascotaDAOImp;
+import aplicacion.dao.imp.PropietarioMascotaDAOImp;
 import aplicacion.modelo.dominio.PropietarioMascota;
 
 /**

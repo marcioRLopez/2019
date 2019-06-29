@@ -1,7 +1,7 @@
 package aplicacion.test;
 
 import aplicacion.hibernate.dao.IMedicamentoDAO;
-import aplicacion.hibernate.dao.imp.MedicamentoDAOImp;
+import aplicacion.dao.imp.MedicamentoDAOImp;
 import aplicacion.modelo.dominio.Medicamento;
 import java.time.Instant;
 import java.util.Date;
