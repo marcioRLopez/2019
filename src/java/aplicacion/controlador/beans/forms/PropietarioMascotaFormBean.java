@@ -51,6 +51,12 @@ public class PropietarioMascotaFormBean {
     public void visualizarVentanaConfirmaModificacion() {
         RequestContext context = RequestContext.getCurrentInstance();
         context.execute("PF('confirmaModificacionPropietario').show();");
+
+    }
+
+    public void visualizarVentanaConfirmarBaja() {
+        RequestContext context = RequestContext.getCurrentInstance();
+        context.execute("PF('confirmaBajaPropietario').show();");
     }
 
     public void modificarPropietario() {
