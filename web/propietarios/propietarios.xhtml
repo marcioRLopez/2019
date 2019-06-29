@@ -121,19 +121,19 @@
 
                                     <p:outputLabel for="txtDni" value="DNI: " />
                                     <p:inputMask id="txtDni" required="true" size="8" maxlength="8" mask="99.999.999" disabled="true"
-                                                 value="#{propietarioFormBean.propietarioBean.propietario.dni}" />
+                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.dni}" />
 
                                     <p:outputLabel for="txtApellido" value="APELLIDO: " />
                                     <p:inputText id="txtApellido" required="true" size="15" maxlength="15"
-                                                 value="#{propietarioFormBean.propietarioBean.propietario.apellido}" />
+                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.apellido}" />
 
                                     <p:outputLabel for="txtNombres" value="NOMBRES: " />
                                     <p:inputText id="txtNombres" required="true" size="20" maxlength="20"
-                                                 value="#{propietarioFormBean.propietarioBean.propietario.nombre}" />
+                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.nombre}" />
 
                                     <p:outputLabel for="txtDireccion" value="DIRECCION: " />
                                     <p:inputTextarea id="txtDireccion" required="true" rows="3" maxlength="50"
-                                                     value="#{propietarioFormBean.propietarioBean.propietario.direccion}" />
+                                                     value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.direccion}" />
 
                                     <!--<p:outputLabel for="txtFecNacimiento" value="FECHA DE NACIMIENTO: " />
                                     <p:calendar id="txtFecNacimiento" pattern="dd-MM-yyyy" required="true" size="10" maxlength="10"
@@ -142,14 +142,14 @@
 
                                     <p:outputLabel for="txtTelefono" value="NUMERO: " />
                                     <p:inputMask id="txtTelefono" required="true" size="17" mask="(+99) 999 9999999"
-                                                 value="#{propietarioFormBean.propietarioBean.propietario.telefono}" />
+                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.telefono}" />
 
                                     <p:commandButton id="btnActualizarPropietario" value="GRABAR" update=":grwMensajePropietarios" 
-                                                     actionListener="#{propietarioFormBean.visualizarVentanaConfirmaModificacion()}" />
+                                                     actionListener="#{propietarioMascotaFormBean.visualizarVentanaConfirmaModificacion()}" />
 
                                     <p:commandButton id="btnEliminarPropietario" value="ELIMINAR PROPIETARIO"
                                                      oncomplete="PF('confirmaBajaPropietario').show()" update=":grwMensajePropietarios" 
-                                                     actionListener="#{propietarioFormBean.visualizarVentanaConfirmarBaja()}"/>
+                                                     actionListener="#{propietarioMascotaFormBean.visualizarVentanaConfirmarBaja()}"/>
                                 </h:panelGrid>
                             </p:dialog>
                         </h:form>
@@ -160,7 +160,7 @@
                                              widgetVar="confirmaModificacionPropietario" showEffect="explode" hideEffect="explode" >
 
                                 <p:commandButton icon="btnConfirmaModificacionPropietario" value="SI" update=":frmPropietarios"
-                                                 actionListener="#{propietarioFormBean.actualizarPropietario()}"/>
+                                                 actionListener="#{propietarioMascotaFormBean.modificarPropietario()}"/>
 
                                 <p:commandButton icon="btnNoConfirmaModificacionPropietario" value="NO"
                                                  oncomplete="PF('confirmaModificacionPropietario').hide();PF('modificacionPropietario').hide()" />
@@ -173,7 +173,7 @@
                                              widgetVar="confirmaBajaPropietario" showEffect="explode" hideEffect="explode" >
 
                                 <p:commandButton icon="btnConfirmaBajaPropietario" value="SI" update=":frmPropietarios"
-                                                 actionListener="#{propietarioFormBean.eliminarPropietario()}" />
+                                                 actionListener="#{propietarioMascotaFormBean.eliminarPropietario()}" />
 
                                 <p:commandButton icon="btnNoConfirmaBajaPropietario" value="NO"
                                                  oncomplete="PF('confirmaBajaPropietario').hide();PF('modificacionPropietario').hide()" />

@@ -47,10 +47,19 @@ public class PropietarioMascotaFormBean {
         RequestContext context = RequestContext.getCurrentInstance();
         context.execute("PF('confirmaAltaPropietario').show();");
     }
-//    public void visualizarVentanaConfirmaAlta() {
-//        RequestContext context = RequestContext.getCurrentInstance();
-//        context.execute("PF('confirmaAltaPropietario').show();");
-//    }
+
+    public void visualizarVentanaConfirmaModificacion() {
+        RequestContext context = RequestContext.getCurrentInstance();
+        context.execute("PF('confirmaModificacionPropietario').show();");
+    }
+
+    public void modificarPropietario() {
+        IPropietarioDAO propietarioDAO = new PropietarioMascotaDAOImp();
+        propietarioDAO.modificarPropietario(propietarioMascotaBean.getPropietarioMascota());
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Operación concretada", "Operación exitosa"));
+        RequestContext.getCurrentInstance().execute("PF('confirmaModificacionPropietario').hide();PF('modificacionPropietario').hide()");
+
+    }
 
     public void grabarNuevoPropietario() {
         IPropietarioDAO propietarioDAO = new PropietarioMascotaDAOImp();
@@ -58,6 +67,14 @@ public class PropietarioMascotaFormBean {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Operación concretada", "Operación exitosa"));
         RequestContext.getCurrentInstance().execute("PF('confirmaAltaPropietario').hide();PF('altaPropietario').hide()");
 
+    }
+
+    public void eliminarPropietario() {
+        IPropietarioDAO propietarioDAO = new PropietarioMascotaDAOImp();
+        propietarioDAO.eliminarPropietario(propietarioMascotaBean.getPropietarioMascota());
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Operación Concretada :)", "Operación Concretada :)"));
+        RequestContext.getCurrentInstance().execute("PF('modificacionPropietario').hide();");
+        RequestContext.getCurrentInstance().execute("PF('confirmaBajaPropietario').hide();");
     }
 
     /**

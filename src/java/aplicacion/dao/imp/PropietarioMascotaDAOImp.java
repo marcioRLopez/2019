@@ -24,7 +24,11 @@ public class PropietarioMascotaDAOImp implements Serializable, IPropietarioDAO {
 
     @Override
     public void modificarPropietario(PropietarioMascota propietario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(propietario);
+        session.getTransaction().commit();
+        session.close();
     }
 
     @Override
@@ -34,7 +38,11 @@ public class PropietarioMascotaDAOImp implements Serializable, IPropietarioDAO {
 
     @Override
     public void eliminarPropietario(PropietarioMascota propietario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.delete(propietario);
+        session.getTransaction().commit();
+        session.close();
     }
 
     @Override
