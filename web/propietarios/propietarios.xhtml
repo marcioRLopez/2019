@@ -44,6 +44,10 @@
                                         <f:convertDateTime pattern="dd-MM-yyyy" />
                                     </p:outputLabel>
                                 </p:column>-->
+                                <p:column headerText="EMAIL" style="width: 110px;">
+                                    <p:outputLabel value="#{propietario.correoElectronico}"></p:outputLabel>
+                                </p:column>
+
 
                                 <p:column headerText="Editar" style="width: 40px;">
                                     <p:commandButton icon="ui-icon-pencil" update=":frmModificacionPropietarios"
@@ -51,11 +55,6 @@
                                                      actionListener="#{propietarioMascotaFormBean.establecerPropietario(propietario)}"/>
 
                                 </p:column>
-    <p:column headerText="Eliminar">
-        <p:commandButton icon="ui-icon-trash"
-                         actionListener="#{propietarioMascotaFormBean.visualizarVentanaConfirmarBaja()}"
-                         update="frmConfirmaBajaPropietario"/>
-    </p:column>   
 
                             </p:dataTable>
                             <br/>
@@ -69,19 +68,22 @@
                             <p:dialog id="dlgAltaPropietarios" resizable="false" widgetVar="altaPropietario" modal="true"
                                       header="Alta de Propietarios" showEffect="explode" hideEffect="explode">
 
-                                <h:panelGrid id="pnlAltaPropietarios" columns="2" cellpadding="3" >
+                                <h:panelGrid id="pnlAltaPropietarios" columns="1" cellpadding="6" >
 
-                                    <p:outputLabel for="txtDni" value="DNI: " />
-                                    <p:inputMask id="txtDni" required="true" size="8" maxlength="8" mask="99.999.999"
-                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.dni}" />
+                                    <p:outputLabel for="txtDni" value="DNI: ">
+                                        <p:inputMask id="txtDni" required="true" size="8" maxlength="8" mask="99.999.999"
+                                                     value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.dni}" />
+                                    </p:outputLabel>
 
-                                    <p:outputLabel for="txtApellido" value="APELLIDO: " />
-                                    <p:inputText id="txtApellido" required="true" size="15" maxlength="15"
-                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.apellido}" />
+                                    <p:outputLabel for="txtApellido" value="APELLIDO: " >
+                                        <p:inputText id="txtApellido" required="true" size="15" maxlength="15"
+                                                     value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.apellido}" />
+                                    </p:outputLabel>
 
-                                    <p:outputLabel for="txtNombres" value="NOMBRES: " />
-                                    <p:inputText id="txtNombres" required="true" size="20" maxlength="20"
-                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.nombre}" />
+                                    <p:outputLabel for="txtNombres" value="NOMBRES: " >
+                                        <p:inputText id="txtNombres" required="true" size="20" maxlength="20"
+                                                     value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.nombre}" />
+                                    </p:outputLabel>
 
                                     <p:outputLabel for="txtDireccion" value="DIRECCION: " />
                                     <p:inputTextarea id="txtDireccion" required="true" rows="3" maxlength="50"
@@ -92,10 +94,18 @@
                                                 locale="es" maxdate="#{propietarioMascotaFormBean.fechaActual}"
                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.estado}" />-->
 
-                                    <p:outputLabel for="txtTelefono" value="NUMERO: " />
-                                    <p:inputMask id="txtTelefono" required="true" size="17" mask="(+99) 999 9999999"
-                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.telefono}" />
+                                    <p:outputLabel for="txtTelefono" value="TEL: ">
+                                        <p:inputMask id="txtTelefono" required="true" size="17" mask="(+99) 999 9999999"
+                                                     value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.telefono}" /> 
+                                    </p:outputLabel>
 
+                                    <p:outputLabel for="txtCorreoElectronico" value="Correo Electronico: ">
+                                        <p:inputText id="txtCorreoElectronico" required="true" 
+                                                     maxlength="40" size="40"
+                                                     value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.correoElectronico}">
+                                            <f:validator validatorId="emailValidador"/>
+                                        </p:inputText>
+                                    </p:outputLabel>
                                     <h:panelGroup/><hr></hr>
                                     <p:commandButton id="btnCerrarNuevoPropieterio"
                                                      value="SALIR"
@@ -123,37 +133,50 @@
                         <h:form id="frmModificacionPropietarios">
                             <p:dialog id="dlgModificacionPropietario" widgetVar="modificacionPropietario" header="Modificación de Propietarios" modal="true"
                                       resizable="false" showEffect="explode" hideEffect="explode">
-                                <h:panelGrid id="pnlModificacionPropietarios" columns="2" cellpadding="3">
+                                <h:panelGrid id="pnlModificacionPropietarios" columns="1" cellpadding="6">
 
-                                    <p:outputLabel for="txtDni" value="DNI: " />
-                                    <p:inputMask id="txtDni" required="true" size="8" maxlength="8" mask="99.999.999" disabled="true"
-                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.dni}" />
-
-                                    <p:outputLabel for="txtApellido" value="APELLIDO: " />
-                                    <p:inputText id="txtApellido" required="true" size="15" maxlength="15"
-                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.apellido}" />
-
-                                    <p:outputLabel for="txtNombres" value="NOMBRES: " />
-                                    <p:inputText id="txtNombres" required="true" size="20" maxlength="20"
-                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.nombre}" />
-
+                                    <p:outputLabel for="txtDni" value="DNI: " >
+                                        <p:inputMask id="txtDni" required="true" size="8" maxlength="8" mask="99.999.999" disabled="true"
+                                                     value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.dni}" />
+                                    </p:outputLabel>
+                                    <p:outputLabel for="txtApellido" value="APELLIDO: " >
+                                        <p:inputText id="txtApellido" required="true" size="15" maxlength="15"
+                                                     value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.apellido}" />
+                                    </p:outputLabel>
+                                    <p:outputLabel for="txtNombres" value="NOMBRES: ">
+                                        <p:inputText id="txtNombres" required="true" size="20" maxlength="20"
+                                                     value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.nombre}" />
+                                    </p:outputLabel>
                                     <p:outputLabel for="txtDireccion" value="DIRECCION: " />
                                     <p:inputTextarea id="txtDireccion" required="true" rows="3" maxlength="50"
                                                      value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.direccion}" />
 
-                                    <!--<p:outputLabel for="txtFecNacimiento" value="FECHA DE NACIMIENTO: " />
-                                    <p:calendar id="txtFecNacimiento" pattern="dd-MM-yyyy" required="true" size="10" maxlength="10"
-                                                locale="es" maxdate="#{propietarioFormBean.fechaActual}"
-                                                value="#{propietarioFormBean.propietarioBean.propietario.fechaNacimiento}" />-->
 
-                                    <p:outputLabel for="txtTelefono" value="NUMERO: " />
-                                    <p:inputMask id="txtTelefono" required="true" size="17" mask="(+99) 999 9999999"
-                                                 value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.telefono}" />
+                                    <!--<p:outputLabel for="txtFecNacimiento" value="FECHA DE NACIMIENTO: " />
+                                                                        <p:calendar id="txtFecNacimiento" pattern="dd-MM-yyyy" required="true" size="10" maxlength="10"
+                                                                                    locale="es" maxdate="#{propietarioFormBean.fechaActual}"
+                                                                                    value="#{propietarioFormBean.propietarioBean.propietario.fechaNacimiento}" />-->
+
+                                    <p:outputLabel for="txtTelefono" value="TEL: " >
+                                        <p:inputMask id="txtTelefono" required="true" size="17" mask="(+99) 999 9999999"
+                                                     value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.telefono}" />
+                                    </p:outputLabel>
+
+
+                                    <p:outputLabel for="txtCorreoElectronico" value="Correo Electronico: ">
+                                        <p:inputText id="txtCorreoElectronico" required="true" 
+                                                     maxlength="40" size="40"
+                                                     value="#{propietarioMascotaFormBean.propietarioMascotaBean.propietarioMascota.correoElectronico}">
+                                            <f:validator validatorId="emailValidador"/>
+                                        </p:inputText>
+                                    </p:outputLabel>
+
+
 
                                     <p:commandButton id="btnActualizarPropietario" value="GRABAR" update=":grwMensajePropietarios" 
                                                      actionListener="#{propietarioMascotaFormBean.visualizarVentanaConfirmaModificacion()}" />
 
-                                    <p:commandButton id="btnEliminarPropietario" value="ELIMINAR PROPIETARIO"
+                                    <p:commandButton id="btnEliminarPropietario" value="ELIMINAR PROPIETARIO" icon="ui-icon-trash"
                                                      oncomplete="PF('confirmaBajaPropietario').show()" update=":grwMensajePropietarios" 
                                                      actionListener="#{propietarioMascotaFormBean.visualizarVentanaConfirmarBaja()}"/>
                                 </h:panelGrid>
