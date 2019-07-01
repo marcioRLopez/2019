@@ -10,39 +10,187 @@
     </h:head>
     <h:body>
         <ui:composition template="./../templates/template.xhtml">
-            <div class="container">
-                <div id="top">
-                    <ui:insert id="cabecera">
-                        <center><h1>Veterinaria Vico</h1></center>
-                        <div id="menu">
-                            <h:form>
-                                <p:menubar>
-                                    <p:submenu label="Historias clínicas">
-                                        <p:menuitem value="Atenciones"/>
-                                    </p:submenu>
-                                    <p:submenu label="Registros">
-                                        <p:menuitem value="Propietarios"/>
-                                        <p:menuitem value="Pacientes"/>
-                                    </p:submenu>
-                                    <p:menuitem value="Mis datos"/>
-                                    <p:menuitem value="Regresar"/>
-                                    <f:facet name="options">
-                                        <p:outputLabel value="Welcome"/>
-                                        <p:commandButton value="Cerrar sesión"/>
-                                    </f:facet>
-                                </p:menubar>
-                            </h:form>
 
-                            <p:panel rendered="">
-                                <h:form>
-                                    <p:outputLabel value="Sesión no iniciada"/>
-                                    <p:commandButton value="Iniciar sesión"/>
-                                </h:form>
-                            </p:panel>
-                        </div>
-                    </ui:insert>
+            <ui:define name="content">
+                <div id="to_plate_main">
+                    <h:form id="frmBuscar" rendered="#{loginFormBean.verificarSesion()}" >
+                        <h:panelGrid id="pnlBuscarAtenciones" columns="5" cellpadding="5" >                            
+
+                            <p:outputLabel for="txtFechaDesde" value="FECHA DESDE: " />
+                            <p:calendar id="txtFechaDesde" pattern="dd-MM-yyyy" size="10" maxlength="10"
+                                        locale="es" value="#{atencionFormBean.fechaDesde}" />
+
+                            <p:outputLabel for="txtFechaHasta" value="FECHA HASTA: " />
+                            <p:calendar id="txtFechaHasta" pattern="dd-MM-yyyy" size="10" maxlength="10"
+                                        locale="es" value="#{atencionFormBean.fechaHasta}" />
+
+                            <p:commandButton value="Buscar" update=":frmAtenciones:tblAtenciones"
+                                             actionListener="#{atencionFormBean.buscarAtenciones()}" />
+                        </h:panelGrid>
+                    </h:form>
+
+                    <p:growl id="grwMensajeAtencion" showDetail="true"  showSummary="false" sticky="false"
+                             widgetVar="mensajeAtencion" />
+
+                    <p:panel id="pnlAtenciones" rendered="#{loginFormBean.verificarSesion()}">
+
+                        <h:form id="frmAtenciones" >
+                            <p:dataTable id="tblAtenciones" value="#{atencionFormBean.algunasAtenciones}" var="Atenciones"
+                                         rows="5" paginator="false" >
+
+                                <p:column headerText="ATENCION ID" style="width: 90px;">
+                                    <p:outputLabel value="#{Atenciones.idAtencionMedica}" ></p:outputLabel>
+                                </p:column>
+
+                                <p:column headerText="FEC ATENCION" style="width: 100px;">
+                                    <p:outputLabel value="#{Atenciones.fechaAtencionMedica}" >
+                                        <f:convertDateTime pattern="dd-MM-yyyy" />
+                                    </p:outputLabel>
+                                </p:column>
+
+                                <p:column headerText="PACIENTE" style="width: 100px;">
+                                    <p:outputLabel value="#{Atenciones.mascota.nombre}" ></p:outputLabel>
+                                </p:column>
+
+                                <p:column headerText="USUARIO" style="width: 100px;">
+                                    <p:outputLabel value="#{Atenciones.propietarioMascota.apellido}" ></p:outputLabel>
+                                </p:column>
+
+                                <p:column headerText="DIAGNOSTICO" style="width: 100px;">
+                                    <p:outputLabel value="#{Atenciones.diagnostico}" ></p:outputLabel>
+                                </p:column>
+
+                                <p:column headerText="OBSERVACIONES" style="width: 120px;">
+                                    <p:outputLabel value="#{Atenciones.observacion}" ></p:outputLabel>
+                                </p:column>
+
+                                <p:column headerText="Editar" style="width: 40px;">
+                                    <p:commandButton icon="ui-icon-pencil" update=":frmModificacionAtencion"
+                                                     oncomplete="PF('modificacionAtencion').show()"
+                                                     actionListener="#{atencionFormBean.establecerAtencion(Atenciones)}"/> 
+                                </p:column>
+                            </p:dataTable>
+                            <br/>
+                            <p:commandButton id="btnCrearAtencion" value="Nueva Atencion" update=":frmAltaAtencion"
+                                             oncomplete="PF('altaAtencion').show()"
+                                             actionListener="#{atencionFormBean.limpiarAtencion()}"/>
+                        </h:form>
+
+                        <!-- ALTA DE ATENCION -->
+
+                        <h:form id="frmAltaAtencion">
+                            <p:dialog id="dlgAltaAtencion" resizable="false" widgetVar="altaAtencion" modal="true"
+                                      header="Alta de Atenciones" showEffect="explode" hideEffect="explode">
+
+                                <h:panelGrid id="pnlAltaAtencion" columns="1" cellpadding="6" >
+
+                                    <p:outputLabel for="txtAtencionID" value="ATENCION ID: " >
+                                        <p:inputText id="txtAtencionID" required="true" size="8" maxlength="8"
+                                                     value="#{atencionFormBean.atencionBean.atencion.idAtencionMedica}" />
+                                    </p:outputLabel>
+
+
+                                    <p:outputLabel for="txtFecAtencion" value="FECHA ATENCION: " >
+                                        <p:calendar id="txtFecAtencion" pattern="dd-MM-yyyy" required="true" size="10" maxlength="10"
+                                                    locale="es" value="#{atencionFormBean.atencionBean.atencion.fechaAtencionMedica}" />
+                                    </p:outputLabel>
+
+
+                                    <p:outputLabel for="txtPaciente" value="PACIENTE: " >
+                                        <h:selectOneMenu id="txtPaciente" value="#{atencionFormBean.atencionBean.atencion.mascota}" >
+                                            <f:selectItems value="#{atencionFormBean.pacientes}" var="pac"
+                                                           itemLabel="#{pac.nombre}"
+                                                           itemValue="#{pac}" />
+                                        </h:selectOneMenu>
+                                    </p:outputLabel>
+
+                                    <!-- converter="omnifaces.SelectItemsConverter" -->
+                                    <p:outputLabel for="txtUsuario" value="DOCTOR: " >
+                                        <p:inputText id="txtUsuario" required="true" size="10" maxlength="10"
+                                                     value="#{atencionFormBean.atencionBean.atencion.propietarioMascota.nombre}" />
+                                    </p:outputLabel>
+
+
+                                    <p:outputLabel for="txtDiagnostico" value="DIAGNOSTICO: " />
+                                    <p:inputText id="txtDiagnostico" required="true" size="60" maxlength="60"
+                                                 value="#{atencionFormBean.atencionBean.atencion.diagnostico}" />
+
+                                    <p:outputLabel for="txtObservaciones" value="OBSERVACIONES: " />
+                                    <p:inputText id="txtObservaciones" required="true" size="50" maxlength="50"
+                                                 value="#{atencionFormBean.atencionBean.atencion.observacion}" />
+
+                                    <h:panelGroup />
+                                    <hr></hr>
+                                    <p:commandButton id="btnCerrarNuevoAtencion"
+                                                     value="SALIR"
+                                                     oncomplete="PF('altaAtencion').hide()"/>
+                                    <p:commandButton id="btnNuevaAtencion" value="GRABAR" update=":frmAtenciones"
+                                                     oncomplete="PF('altaAtencion').hide()" actionListener="#{atencionFormBean.grabarNuevaAtencion()}" />
+                                </h:panelGrid>       
+                            </p:dialog>
+                        </h:form>
+
+                        <!-- MODIFICACION DE ATENCION -->
+
+                        <h:form id="frmModificacionAtencion">
+                            <p:dialog id="dlgModificacionAtencion" resizable="false" widgetVar="modificacionAtencion" modal="true"
+                                      header="Modificacion de Atenciones" showEffect="explode" hideEffect="explode">
+
+                                <h:panelGrid id="pnlModificacionAtencion" columns="2" cellpadding="3" >
+
+                                    <p:outputLabel for="txtAtencionID" value="ATENCION ID: " />
+                                    <p:inputText id="txtAtencionID" required="true" size="8" maxlength="8" disabled="true"
+                                                 value="#{atencionFormBean.atencionBean.atencion.idAtencionMedica}" />
+
+                                    <p:outputLabel for="txtFecAtencion" value="FECHA ATENCION: " />
+                                    <p:calendar id="txtFecAtencion" pattern="dd-MM-yyyy" required="true" size="10" maxlength="10" disabled="true"
+                                                locale="es" value="#{atencionFormBean.atencionBean.atencion.fechaAtencionMedica}" />
+
+                                    <p:outputLabel for="txtPaciente" value="PACIENTE: " />
+                                    <h:selectOneMenu id="txtPaciente" value="#{atencionFormBean.atencionBean.atencion.mascota}" disabled="true" >
+                                        <f:selectItems value="#{atencionFormBean.pacientes}" var="pac"
+                                                       itemLabel="#{pac.nombre}"
+                                                       itemValue="#{pac}" />
+                                    </h:selectOneMenu>
+                                    <!--  converter="omnifaces.SelectItemsConverter"-->
+                                    <p:outputLabel for="txtUsuario" value="USUARIO: " />
+                                    <p:inputText id="txtUsuario" required="true" size="10" maxlength="10" disabled="true"
+                                                 value="#{atencionFormBean.atencionBean.atencion.propietarioMascota.apellido}" />
+
+                                    <p:outputLabel for="txtDiagnostico" value="DIAGNOSTICO: " />
+                                    <p:inputText id="txtDiagnostico" required="true" size="60" maxlength="60"
+                                                 value="#{atencionFormBean.atencionBean.atencion.diagnostico}" />
+
+                                    <p:outputLabel for="txtObservaciones" value="OBSERVACIONES: " />
+                                    <p:inputText id="txtObservaciones" required="true" size="50" maxlength="50"
+                                                 value="#{atencionFormBean.atencionBean.atencion.observacion}" />
+
+                                    <p:commandButton id="btnActualizarAtencion" value="Guardar" update=":frmAtenciones"
+                                                     actionListener="#{atencionFormBean.modificarAtencion()}" oncomplete="PF('modificacionAtencion').hide()"/>
+
+                                    <p:commandButton id="btnEliminarAtencion" value="ELIMINAR ATENCION" update=":frmAtenciones:tblAtenciones"
+                                                     oncomplete="PF('confirmaBajaAtencion').show()"
+                                                     actionListener="#{atencionFormBean.visualizarVentanaConfirmarBajaAtencion()}"/>
+                                </h:panelGrid>       
+                            </p:dialog>
+                        </h:form>
+
+                        <h:form id="frmConfirmaBajaAtencion">
+                            <p:confirmDialog id="dlgConfirmaBajaAtencion" message="Confirma Baja de Atencion?"
+                                             header="CONFIRMACIÓN DE OPERACIÓN" severity="alert"
+                                             widgetVar="confirmaBajaAtencion" showEffect="explode" hideEffect="explode" >
+
+                                <p:commandButton icon="btnConfirmaBajaAtencion" value="SI" actionListener="#{atencionFormBean.eliminarAtencion()}"
+                                                 update=":frmAtenciones:tblAtenciones" oncomplete="PF('confirmaBajaAtencion').hide();PF('modificacionAtencion').hide()" />
+
+                                <p:commandButton icon="btnNoConfirmaBajaAtencion" value="NO"
+                                                 oncomplete="PF('confirmaBajaAtencion').hide();PF('modificacionAtencion').hide()" />
+                            </p:confirmDialog>
+                        </h:form>
+                    </p:panel>
                 </div>
-            </div>
+            </ui:define>
+
         </ui:composition>
     </h:body>
 </html>

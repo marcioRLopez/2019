@@ -10,81 +10,53 @@
     </h:head>
     <h:body>
         <ui:composition template="./../templates/template.xhtml">
-            <div class="container">
-                <div id="top">
-                    <ui:insert id="cabecera">
-                        <center><h1>Veterinaria Vico</h1></center>
-                        <div id="menu">
-                            <h:form>
-                                <p:menubar>
-                                    <p:submenu label="Historias clínicas">
-                                        <p:menuitem value="Atenciones"/>
-                                    </p:submenu>
-                                    <p:submenu label="Registros">
-                                        <p:menuitem value="Propietarios"/>
-                                        <p:menuitem value="Pacientes"/>
-                                    </p:submenu>
-                                    <p:menuitem value="Mis datos"/>
-                                    <p:menuitem value="Regresar"/>
-                                    <f:facet name="options">
-                                        <p:outputLabel value="Welcome"/>
-                                        <p:commandButton value="Cerrar sesión"/>
-                                    </f:facet>
-                                </p:menubar>
-                            </h:form>
 
-                            <p:panel rendered="">
-                                <h:form>
-                                    <p:outputLabel value="Sesión no iniciada"/>
-                                    <p:commandButton value="Iniciar sesión"/>
-                                </h:form>
+            <ui:define name="content">
+                <div id="to_plate_main">
+                    <div class="contenedorUsuario">
+                        <h:form id="frmUsuario" rendered="#{loginFormBean.verificarSesion()}">
+                            <p:growl id="mensajeGeneral" showDetail="false" sticky="false"/> 
+                            <p:panel id="pnlActualizacion" header="Actualización de Datos de Usuario" footer="Veterinaria Mascota Felíz">
+                                <h:panelGrid columns="2" cellpadding="5">
+                                    
+                                    <p:outputLabel for="txtNombre" value="Nombre de Usuario: "/>
+                                    <p:inputText id="txtNombre" readonly="true" 
+                                                 value="#{usuarioFormBean.usuarioBean.usuario.nombreUsuario}"/>
+
+                                    <p:outputLabel for="txtCorreoElectronico" value="Correo Electronico: "/>
+                                    <p:inputText id="txtCorreoElectronico" required="true" 
+                                                 maxlength="40" size="40"
+                                                 value="#{usuarioFormBean.usuarioBean.usuario.correoElectronico}">
+                                        <f:validator validatorId="emailValidador"/>
+                                    </p:inputText>
+
+                                    <p:outputLabel for="txtDni" value="DNI: "/>
+                                    <p:inputText id="txtDni" 
+                                                 value="#{usuarioFormBean.usuarioBean.usuario.persona.dni}"/>
+                                    
+                                    <p:outputLabel for="txtApellido" value="Apellido: "/>
+                                    <p:inputText id="txtApellido" maxlength="20" size="20" required="true"
+                                                 value="#{usuarioFormBean.usuarioBean.usuario.persona.apellido}"/>
+
+                                    <p:outputLabel for="txtNombres" value="Nombres: "/>
+                                    <p:inputText id="txtNombres" maxlength="20" size="20" required="true"
+                                                 value="#{usuarioFormBean.usuarioBean.usuario.persona.nombres}"/>
+
+                                    <p:outputLabel for="txtFechaNacimiento" value="Fecha de Nacimiento: "/>
+                                    <p:calendar id="txtFechaNacimiento" pattern="dd-MM-yyyy" mask="true" required="true"
+                                                size="10" maxlength="10" locale="es"
+                                                value="#{usuarioFormBean.usuarioBean.usuario.persona.fechaNacimiento}"/>
+
+                                    <h:panelGroup/>
+                                    <p:commandButton id="btnGrabar" value="Actualizar Datos" update="frmUsuario"
+                                                     actionListener="#{usuarioFormBean.actualizarDatos()}"/>
+                                </h:panelGrid>
                             </p:panel>
-                        </div>
-                    </ui:insert>
+                        </h:form>
+                    </div>
                 </div>
+            </ui:define>
 
-                <div id="contenedorUsuarioDoctor">
-                    <h:form id="frmUsuarioDoctor">
-                        <p:growl id="mensajeGral"/>
-                        <p:panel header="Actualización de datos Usuario" footer="Grupo Diez">
-                            <p:panelGrid columns="2">
-                                <p:outputLabel for="txtNombre" value="Nombre de Usuario: " />
-                                <p:inputText id="txtNombre" readonly="true"
-                                             >
-                                </p:inputText>
-
-                                <p:outputLabel for="txtCorreoElectronico" value="Correo Electronico: " />
-                                <p:inputText id="txtCorreoElectronico" required="true" maxlength="40" size="40"
-                                             >
-
-
-                                </p:inputText>
-
-                                <p:outputLabel for="txtApellido" value="Apellido: "/>
-                                <p:inputText id="txtApellido" required="true" maxlength="20" size="20"
-                                             >                            
-                                </p:inputText>
-
-                                <p:outputLabel for="txtNombres" value="Nombres: "/>
-                                <p:inputText id="txtNombres" required="true" maxlength="20" size="20"
-                                             >                            
-                                </p:inputText>
-
-                                <p:outputLabel for="txtFechaNacimiento" value="Fecha de Nacimiento: "/>
-                                <p:calendar id="txtFechaNacimiento" pattern="dd-MM-yyyy" required="true"
-                                            maxlength="10" size="10" locale="es" >                            
-                                </p:calendar>
-
-                                <h:panelGroup/>
-                                <p:commandButton id="btnGrabar" value="Actualizar Datos " 
-                                                 />
-                            </p:panelGrid>
-
-                        </p:panel>
-                    </h:form>
-                </div>
-
-            </div>
         </ui:composition>
     </h:body>
 </html>

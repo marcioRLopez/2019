@@ -26,4 +26,22 @@ public class AtencionDAOImp implements Serializable, IAtencionDAO {
         session.close();
     }
 
+    @Override
+    public void actualizarAtencion(Atencion atencion) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(atencion);
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    @Override
+    public void borrarAtencion(Atencion atencion) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.delete(atencion);
+        session.getTransaction().commit();
+        session.close();
+    }
+
 }

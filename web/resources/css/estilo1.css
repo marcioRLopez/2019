@@ -30,7 +30,7 @@
 }*/
 
 #tooplate_middle{
-    
+
     clear: both;
     height: 30px;
     margin: 0 auto;
@@ -38,7 +38,7 @@
 }
 
 #to_plate_main{
-    
+
     clear: both;
     height: 330px;
     margin: 0 auto;
@@ -53,11 +53,15 @@
 }
 
 #titulo {
-float: left;
-width: 960px;
-margin-top: 3%;
-color: #ff9041;
+    float: left;
+    width: 960px;
+    margin-top: 3%;
+    color: #ff9041;
 }
+#pnlPacientes, #pnlPropietarios, #pnlAtenciones{
+    background-color: #c2dfef;
+}
+
 /*
 #left {
     float: left;

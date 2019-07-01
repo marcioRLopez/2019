@@ -11,7 +11,7 @@
         <ui:composition template="./../templates/template.xhtml">
 
             <ui:define name="content">
-                <div id="tooplate_main">
+                <div id="to_plate_main">
                     <div class="contenedorUsuario">
                         <h:form id="frmUsuario" rendered="#{loginFormBean.verificarSesion()}">
                             <p:growl id="mensajeGeneral" showDetail="false" sticky="false"/> 
@@ -26,7 +26,7 @@
                                     <p:inputText id="txtCorreoElectronico" required="true" 
                                                  maxlength="40" size="40"
                                                  value="#{doctorFormBean.usuarioBean.usuario.correoElectronico}">
-                                        <f:validator validatorId="EmailValidator"/>
+                                        <f:validator validatorId="emailValidador"/>
                                     </p:inputText>
 
                                     <p:outputLabel for="txtDni" value="DNI: "/>

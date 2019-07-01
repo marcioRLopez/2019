@@ -10,186 +10,178 @@
     </h:head>
     <h:body>
         <ui:composition template="./../templates/template.xhtml">
+
             <ui:define name="content">
-                <!-- TABLA Principal de Pacientes -->
+                <!-- TABLA PRINCIPAL -->
                 <div id="to_plate_main">
                     <p:growl id="grwMensajePaciente" showDetail="true" showSummary="false"
                              widgetVar="mensajePaciente"/>
+
                     <p:panel id="pnlPacientes" rendered="#{loginFormBean.verificarSesion()}">
-                        <h:form id="frmTabla" enctype="multipart/form-data">
-                            <p:dataTable id="tblPacientes" value="#{mascotaFormBean}" var="paciente" rows="3">
+
+                        <h:form id="frmTabla"  enctype="multipart/form-data">
+
+                            <p:dataTable id="tblPacientes" value="#{mascotaFormBean.obtenerMascotas()}" var="paciente" rows="3"  paginator="false" >
 
                                 <p:column headerText="ID Paciente" width="40">
-                                    <p:outputLabel value="" ></p:outputLabel>
+                                    <p:outputLabel value="#{paciente.idMascota}" ></p:outputLabel>
                                 </p:column>
 
-                                <p:column headerText="N° H. Clínica" width="50" >
-                                    <p:outputLabel></p:outputLabel>
+                                <p:column headerText="Nombre" width="50" >
+                                    <p:outputLabel>#{paciente.nombre}</p:outputLabel>
                                 </p:column>
 
-                                <p:column headerText="Nombre" filterMatchMode="contains" width="80" >
-                                    <p:outputLabel></p:outputLabel>
+                                <p:column headerText="Especie" filterMatchMode="contains" width="80" >
+                                    <p:outputLabel>#{paciente.especie}</p:outputLabel>
                                 </p:column>
 
-                                <p:column headerText="Fecha de Nacimiento" width="80">
-                                    <p:outputLabel value="">
+                                <p:column headerText="Fecha de Nac" width="80">
+                                    <p:outputLabel value="#{paciente.fechaNacimiento}">
                                         <f:convertDateTime pattern="dd/MM/yyyy" /> 
                                     </p:outputLabel>
                                 </p:column>
 
-                                <p:column headerText="Especie" width="70">
-                                    <p:outputLabel>#{paciente.especie}</p:outputLabel>
+                                <p:column headerText="Sexo" width="70">
+                                    <p:outputLabel>#{paciente.sexo}</p:outputLabel>
                                 </p:column>
 
-                                <p:column headerText="Sexo"  width=" 60" >
-                                    <p:outputLabel></p:outputLabel>
+                                <p:column headerText="Raza"  width=" 60" >
+                                    <p:outputLabel>#{paciente.raza}</p:outputLabel>
                                 </p:column>
 
-                                <p:column headerText="Propietario"  width="90">
-                                    <p:outputLabel value="" ></p:outputLabel>
+                                <p:column headerText="Vacuna"  width="90">
+                                    <p:outputLabel value="#{paciente.vacuna}, #{paciente.vacuna.nombreVacuna}" ></p:outputLabel>
                                 </p:column>       
 
-                                <p:column headerText="FOTO" width="90">
-                                    <p:panel   >
-                                        <p:graphicImage width="70"  value="" height="60" cache="false" rendered="">
-                                            <f:param name="fhc" />
-                                        </p:graphicImage>
-                                    </p:panel>
-                                </p:column>
+                                
+                                
 
-                                <p:column headerText="Editar"  width="50" >
-                                    <p:commandButton icon="ui-icon-pencil" 
-                                                     >
+                                <p:column headerText="Editar"  width="40" >
+                                    <p:commandButton icon="ui-icon-pencil" actionListener="#{mascotaFormBean.establecerPaciente(paciente)}"
+                                                     oncomplete="PF('wvDialogPacienteModificar').show();" update=":frmModalModificar:dialogPacienteModificar">
                                     </p:commandButton>
                                 </p:column>
 
                             </p:dataTable>
-                            <br/>
-                            <p:commandButton value="Nuevo Paciente" />
+                            <h:panelGrid/>
+                            <p:commandButton value="Nuevo Paciente" actionListener="#{mascotaFormBean.limpiarPaciente()}"
+                                             oncomplete="PF('wvDialogPacienteAlta').show()" update=":frmModalAgregar:dialogPacienteAlta" />
 
                         </h:form>
                     </p:panel>
 
                     <!-- ALTA -->
-                    <h:form id="frmModalAgregar" enctype="multipart/form-data">
-                        <p:dialog id="dialogPacienteAlta" widgetVar="wvDialogPacienteAlta" header="Alta de Pacientes"
-                                  draggable="false" closable="true" modal="true">
-                            <p:panelGrid columns="2">
-                                <p:outputLabel for="txtPacienteID" value="ID Paciente: " />
+                    <h:form id="frmModalAgregar"  enctype="multipart/form-data">
+                        <p:dialog id="dialogPacienteAlta" widgetVar="wvDialogPacienteAlta" header="ALTA DE PACIENTES"
+                                  draggable="false" closable="true" modal="true" >
+                            <h:panelGrid columns="2" cellpadding="3">
+
+                                <p:outputLabel for="txtPacienteID" value="PACIENTE ID: " />
                                 <p:inputText id="txtPacienteID" required="true" size="4" maxlength="4"
-                                             value="#{mascotaFormBean}" />
+                                             value="#{mascotaFormBean.pacienteBean.paciente.idMascota}" />
 
-                                <p:outputLabel for="txtNroHistoriaClinica" value="N° H.Clínica: " />
-                                <p:inputText id="txtNroHistoriaClinica" required="true" size="10" maxlength="10"
-                                             value="#{mascotaFormBean.pacienteBean}" />
+                                <p:outputLabel for="txtNombre" value="NOMBRE: " />
+                                <p:inputText id="txtNombre" required="true" size="10" maxlength="10"
+                                             value="#{mascotaFormBean.pacienteBean.paciente.nombre}" />
 
-                                <p:outputLabel for="txtNombre" value="Nombre: " />
-                                <p:inputText id="txtNombre" required="true" size="20" maxlength="20"
-                                             value="#{mascotaFormBean.pacienteBean}" />
-
-                                <p:outputLabel for="txtFecNacimiento" value="Fecha de Nacimiento: " />
-                                <p:calendar id="txtFecNacimiento" pattern="dd-MM-yyyy" required="true" size="10" maxlength="10"
-                                            locale="es" maxdate="#{mascotaFormBean}"
-                                            value="#{mascotaFormBean.pacienteBean}" />
-
-                                <p:outputLabel for="txtEspecie" value="Especie: " />
+                                <p:outputLabel for="txtEspecie" value="ESPECIE: " />
                                 <p:inputText id="txtEspecie" required="true" size="20" maxlength="20"
-                                             value="#{mascotaFormBean.pacienteBean}" />
-                                <p:outputLabel for="txtSexo" value="Sexo"></p:outputLabel>
-                                <p:selectOneRadio id="txtSexo" value="#{mascotaFormBean}">
+                                             value="#{mascotaFormBean.pacienteBean.paciente.especie}" />
+
+                                <p:outputLabel for="txtFecNacimiento" value="FECHA DE NACIMIENTO: " />
+                                <p:calendar id="txtFecNacimiento" pattern="dd-MM-yyyy" required="true" size="10" maxlength="10"
+                                            locale="es" maxdate="#{mascotaFormBean.fechaActual}"
+                                            value="#{mascotaFormBean.pacienteBean.paciente.fechaNacimiento}" />
+
+                                 <p:outputLabel for="txtSexo" value="Sexo"></p:outputLabel>
+                                 <p:selectOneRadio id="txtSexo" value="#{mascotaFormBean.pacienteBean.paciente.sexo}">
                                     <f:selectItem itemLabel="Macho" itemValue="MACHO"></f:selectItem>
                                     <f:selectItem itemLabel="Hembra" itemValue="HEMBRA"></f:selectItem>
                                 </p:selectOneRadio>
-
-                                <p:outputLabel for="txtPropietario" value="Propietario: " />
-                                <h:selectOneMenu id="txtPropietario" value="" >
-                                    <f:selectItems value="#{mascotaFormBean}" var="pac"
-                                                   itemLabel=""
-                                                   itemValue="" />
+                                
+                                <p:outputLabel for="txtRaza" value="RAZA: " />
+                                <p:inputText id="txtRaza" required="true" size="20" maxlength="20"
+                                             value="#{mascotaFormBean.pacienteBean.paciente.especie}" />
+                                
+                                <p:outputLabel for="txtVacuna" value="Vacuna: " />
+                                <h:selectOneMenu id="txtVacuna" value="#{mascotaFormBean.pacienteBean.paciente.vacuna}" >
+                                    <f:selectItems value="#{mascotaFormBean.propietarios}" var="pac"
+                                                   itemLabel="#{pac.nombre}, #{pac.apellido}"
+                                                   itemValue="#{pac}" />
                                 </h:selectOneMenu>
-
-                                <p:outputLabel value="FOTO: " />
-
-
-
-                                <p:panel rendered="#{mascotaFormBean.pacienteBean.paciente.conFoto}">
-                                    <p:graphicImage width="50" value="#{mascotaFormBean.archivoFoto}" height="80" cache="false" rendered="#{paciente.conFoto}">
-                                        <f:param name="id" value=""/>
-                                    </p:graphicImage>
-                                </p:panel>
+                                    <!-- converter="omnifaces.SelectItemsConverter" -->
+                                  
+                                    
+                                    
+                                    
                                 <hr></hr>
-                                <p:commandButton value="Agregar" ajax="false" 
+                                <p:commandButton value="Agregar" ajax="false" actionListener="#{mascotaFormBean.nuevoPacienteMascota()}"
                                                  oncomplete="PF('wvDialogPacienteAlta').hide()"  update=":frmTabla:tblPacientes">
                                 </p:commandButton>  
-
-
+                                    
+                                   
                                 <p:commandButton id="btnCerrarNuevoPaciente"
-                                                 value="SALIR"
-                                                 oncomplete="PF('wvDialogPacienteAlta').hide()"/>
-                            </p:panelGrid>
+                                             value="SALIR"
+                                             oncomplete="PF('wvDialogPacienteAlta').hide()"/>
+                            </h:panelGrid>
                         </p:dialog>
-                    </h:form>
+                    </h:form>                
 
                     <!-- MODIFICACION -->
-                    <h:form id="modalModificarPacientes" enctype="multipart/form-data">
-                        <p:dialog id="dialogPacienteModificar" header="Modificación de pacientes">
-                            <h:panelGrid columns="2">
+                    <h:form id="frmModalModificar"  enctype="multipart/form-data">
+                        <p:dialog id="dialogPacienteModificar" widgetVar="wvDialogPacienteModificar" header="MODIFICACION DE PACIENTES"
+                                  draggable="true" closable="true" modal="true">
+                            <h:panelGrid columns="2" cellpadding="3">
 
                                 <p:outputLabel for="txtPacienteID" value="ID Paciente: " />
                                 <p:inputText id="txtPacienteID" required="true" size="4" maxlength="4"
-                                             value="#{mascotaFormBean.pacienteBean}" />
-
-                                <p:outputLabel for="txtNroHistoriaClinica" value="N° H.Clínica " />
-                                <p:inputText id="txtNroHistoriaClinica" required="true" size="10" maxlength="10"
-                                             value="#{mascotaFormBean.pacienteBean}" />
+                                             value="#{mascotaFormBean.pacienteBean.paciente.idMascota}" />
 
                                 <p:outputLabel for="txtNombre" value="Nombre: " />
-                                <p:inputText id="txtNombre" required="true" size="20" maxlength="20"
-                                             value="#{mascotaFormBean.pacienteBean}" />
-
-                                <p:outputLabel for="txtFecNacimiento" value="Fecha de Nacimiento: " />
-                                <p:calendar id="txtFecNacimiento" pattern="dd-MM-yyyy" required="true" size="10" maxlength="10"
-                                            locale="es" maxdate="#{mascotaFormBean}"
-                                            value="#{mascotaFormBean.pacienteBean}" />
+                                <p:inputText id="txtNombre" required="true" size="10" maxlength="10"
+                                             value="#{mascotaFormBean.pacienteBean.paciente.nombre}" />
 
                                 <p:outputLabel for="txtEspecie" value="Especie: " />
                                 <p:inputText id="txtEspecie" required="true" size="20" maxlength="20"
-                                             value="#{mascotaFormBean.pacienteBean}" />
+                                             value="#{mascotaFormBean.pacienteBean.paciente.especie}" />
 
+                                <p:outputLabel for="txtFecNacimiento" value="FECHA DE NACIMIENTO: " />
+                                <p:calendar id="txtFecNacimiento" pattern="dd-MM-yyyy" required="true" size="10" maxlength="10"
+                                            locale="es" maxdate="#{mascotaFormBean.fechaActual}"
+                                            value="#{mascotaFormBean.pacienteBean.paciente.fechaNacimiento}" />
+
+                                
                                 <p:outputLabel for="txtSexo" value="Sexo: "/>
                                 <p:inputText id="txtSexo" required="true" size="8" maxlength="1"
-                                             value="#{mascotaFormBean.pacienteBean}" />
+                                             value="#{mascotaFormBean.pacienteBean.paciente.sexo}" />
+                                
+                                <p:outputLabel for="txtRaza" value="Raza: " />
+                                <p:inputText id="txtRaza" required="true" size="20" maxlength="20"
+                                             value="#{mascotaFormBean.pacienteBean.paciente.raza}" />
 
-                                <p:outputLabel for="txtPropietario" value="Propietario: " />
-                                <h:selectOneMenu id="txtPropietario" value="#{mascotaFormBean.pacienteBean}" >
-                                    <f:selectItems value="#{mascotaFormBean}" var="pac"
-                                                   itemLabel=""
-                                                   itemValue="" />
+                                <p:outputLabel for="txtPropietario" value="PROPIETARIO: " />
+                                <h:selectOneMenu id="txtPropietario" value="#{mascotaFormBean.pacienteBean.paciente.vacuna}">
+                                    <f:selectItems value="#{mascotaFormBean.propietarios}" var="pac"
+                                                   itemLabel="#{pac.nombre}, #{pac.apellido}"
+                                                   itemValue="#{pac}" />
                                 </h:selectOneMenu>
-
-                                <p:panel rendered="#{mascotaFormBean.pacienteBean}">
-                                    <p:graphicImage width="80" value="#{mascotaFormBean}" height="80" cache="false"
-                                                    rendered="#{mascotaFormBean.pacienteBean}" >
-                                        <f:param name="id" value="#{mascotaFormBean.pacienteBean}"/>
-                                    </p:graphicImage>
-                                </p:panel>
-
-                                <p:fileUpload id="txtFoto" value="" mode="simple"/><br /><br />
+                                    <!-- converter="omnifaces.SelectItemsConverter"  -->
+                                
+                                    
+                                <br /><br />
 
 
-                                <p:commandButton value="ELIMINAR PACIENTE" ajax="false" 
-                                                 oncomplete="PF('wvDialogPacienteModificar').hide()"/>
-
-                                <p:commandButton value="GRABAR" ajax="false" 
-                                                 oncomplete="PF('wvDialogPacienteModificar').hide()" />
-
+                                <p:commandButton value="ELIMINAR PACIENTE" ajax="false" actionListener="#{mascotaFormBean.eliminarMascota()}"
+                                                 oncomplete="PF('wvDialogPacienteModificar').hide()" update=":frmTabla:tblPacientes"/>
+                                
+                                <p:commandButton value="Guardar" ajax="false" actionListener="#{mascotaFormBean.cambiarMascota()}"
+                                                 oncomplete="PF('wvDialogPacienteModificar').hide()" update=":frmTabla"/>
                             </h:panelGrid>
                         </p:dialog>
                     </h:form>
-
-
                 </div>
             </ui:define>
+
         </ui:composition>
     </h:body>
 </html>

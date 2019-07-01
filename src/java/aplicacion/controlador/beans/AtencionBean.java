@@ -1,39 +1,27 @@
 package aplicacion.controlador.beans;
 
 import aplicacion.modelo.dominio.Atencion;
-import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
 /**
  *
- * @author GRUPO10 Clase bean de la clase Atencion servira para su conexion con
- * la pagina web
+ * @author EZEQUIEL
  */
 @ManagedBean
-@ViewScoped
-public class AtencionBean implements Serializable {
+@SessionScoped
+public class AtencionBean {
 
-    /**
-     * atributo de tipo objeto Atencion
-     */
     private Atencion atencion;
 
-    /**
-     * constructor por defecto de la clase utilizacion un metodo if si la
-     * atencion no existe, se crea una nueva instancia de esa
-     */
     public AtencionBean() {
         if (atencion == null) {
             atencion = new Atencion();
         }
     }
-// SECCION DE GETTERS Y SETTERS
 
     /**
-     * en este getter indicamos si la atencion no existe se crea una nueva
-     *
-     * @return regresa esta nueva atencion
+     * @return the atencion
      */
     public Atencion getAtencion() {
         if (atencion == null) {
@@ -43,9 +31,7 @@ public class AtencionBean implements Serializable {
     }
 
     /**
-     * ese metodo no nos devuelve nada unicamente indica la atencion
-     *
-     * @param atencion
+     * @param atencion the atencion to set
      */
     public void setAtencion(Atencion atencion) {
         this.atencion = atencion;

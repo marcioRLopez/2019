@@ -16,13 +16,19 @@ public class MascotaBean implements Serializable {
     private Mascota paciente;
 
     public MascotaBean() {
-        paciente = new Mascota();
+        if (paciente == null) {
+            paciente = new Mascota();
+        }
     }
 
     /**
      * @return the paciente
      */
     public Mascota getPaciente() {
+        if (paciente == null) {
+            paciente = new Mascota();
+        }
+
         return paciente;
     }
 

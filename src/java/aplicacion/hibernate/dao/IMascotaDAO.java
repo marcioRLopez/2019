@@ -1,6 +1,7 @@
 package aplicacion.hibernate.dao;
 
 import aplicacion.modelo.dominio.Mascota;
+import java.util.List;
 
 /**
  *
@@ -8,5 +9,13 @@ import aplicacion.modelo.dominio.Mascota;
  */
 public interface IMascotaDAO {
 
-    void create(Mascota mascota);
+    void crear(Mascota mascota);
+
+    List<Mascota> obtenerListaMascota();
+
+    public void borrarPaciente(Mascota mascota);
+
+    public Mascota obtenerPaciente(String nombreMascota);
+
+    public void modificarMascota(Mascota mascota);
 }
