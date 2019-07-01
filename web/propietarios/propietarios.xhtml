@@ -204,6 +204,16 @@
                                 <p:commandButton icon="btnNoConfirmaBajaPropietario" value="NO"
                                                  oncomplete="PF('confirmaBajaPropietario').hide();PF('modificacionPropietario').hide()" />
                             </p:confirmDialog>
+
+                            <p:commandButton id="btnImprimirUsuario"
+                                             value="Imprimir Usuarios"
+                                             actionListener="#{propietarioMascotaFormBean.listarArrayUsuarioPdf()}"
+                                             ajax="false"
+                                             resetValues="true"/>
+
+
+
+
                         </h:form>
 
                     </p:panel>

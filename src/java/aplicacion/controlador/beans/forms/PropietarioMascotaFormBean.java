@@ -4,13 +4,25 @@ import aplicacion.controlador.beans.PropietarioMascotaBean;
 import aplicacion.dao.imp.PropietarioMascotaDAOImp;
 import aplicacion.hibernate.dao.IPropietarioDAO;
 import aplicacion.modelo.dominio.PropietarioMascota;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.primefaces.context.RequestContext;
 
 /**
@@ -83,6 +95,33 @@ public class PropietarioMascotaFormBean {
         RequestContext.getCurrentInstance().execute("PF('confirmaBajaPropietario').hide();");
     }
 
+    public void listarArrayUsuarioPdf()
+throws JRException, IOException{
+Map<String, Object> parametros = new HashMap<String, Object>();
+//puedo pasar parametros al report, siempre que el diseño lo soporte
+//parametros.put("usuario", "pepito");
+List<PropietarioMascota> usuarios = new ArrayList();
+usuarios = this.obtenerPropietarios();
+File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/propietario2Report.jasper"));
+JasperPrint jasperPrint = JasperFillManager.fillReport(jasper.getPath(), parametros, new JRBeanCollectionDataSource(usuarios));
+HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
+response.setContentType("application/pdf");
+response.addHeader("Content-disposition", "attachment; filename=usuario-report.pdf");
+ServletOutputStream stream = response.getOutputStream();
+JasperExportManager.exportReportToPdfStream(jasperPrint, stream);
+//exportamos a un archivo en disco
+//JasperExportManager.exportReportToPdfFile(jasperPrint, "e:/reporte.pdf");
+//mostrar en visor jasper
+//JasperViewer.viewReport(jasperPrint,false);
+stream.flush();
+stream.close();
+FacesContext.getCurrentInstance().responseComplete();
+}
+    
+    
+    
+    
+    
     /**
      * @return the propietarioMascotaBean
      */

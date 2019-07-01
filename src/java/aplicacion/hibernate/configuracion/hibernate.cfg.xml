@@ -4,9 +4,10 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/esquemavete19?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/esquemavete19?</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">rene.ezequiel.clavijo.REC2019</property>
+    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.show_sql">true</property>
     <mapping resource="aplicacion/hibernate/mapeos/Doctor.hbm.xml"/>
     <mapping resource="aplicacion/hibernate/mapeos/Vacuna.hbm.xml"/>
     <mapping resource="aplicacion/hibernate/mapeos/Medicamento.hbm.xml"/>
