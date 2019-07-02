@@ -102,11 +102,11 @@ Map<String, Object> parametros = new HashMap<String, Object>();
 //parametros.put("usuario", "pepito");
 List<PropietarioMascota> usuarios = new ArrayList();
 usuarios = this.obtenerPropietarios();
-File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/propietario2Report.jasper"));
+File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/propietario3Report.jasper"));
 JasperPrint jasperPrint = JasperFillManager.fillReport(jasper.getPath(), parametros, new JRBeanCollectionDataSource(usuarios));
 HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
 response.setContentType("application/pdf");
-response.addHeader("Content-disposition", "attachment; filename=usuario-report.pdf");
+response.addHeader("Content-disposition", "attachment; filename=usuario1-report.pdf");
 ServletOutputStream stream = response.getOutputStream();
 JasperExportManager.exportReportToPdfStream(jasperPrint, stream);
 //exportamos a un archivo en disco

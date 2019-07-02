@@ -16,23 +16,23 @@ import java.util.Date;
  */
 public class getTestAtencion {
 
-//    public static void main(String[] args) {
-//        Atencion a = new Atencion();
-//        IAtencionDAO adao = new AtencionDAOImp();
-//        Vacuna v = new Vacuna("AB1", "AntiRabica", "hhhhjj", Date.from(Instant.now()), true);
-//        Mascota ms = new Mascota("2222", "tina", "can", "h", "pitbl", Date.from(Instant.now()), 4, true, v);
-//        PropietarioMascota pm = new PropietarioMascota("34765765", "pablo", "mamani", "calle 2", "2345645", "@hotmail", true);
-//        Medicamento md = new Medicamento("123", "curaPata", Date.from(Instant.now()), "pastilla", true);
-//
-//        a.setIdAtencionMedica("12");
-//        a.setFechaAtencionMedica(Date.from(Instant.now()));
-//        a.setDiagnostico("reservado");
-//        a.setObservacion("REPOSO");
-//        a.setMascota(ms);
-//        a.setPropietarioMascota(pm);
-//        a.setMedicamento(md);
-//        a.setEstado(Boolean.TRUE);
-//
-//        adao.create(a);
-//    }
+    public static void main(String[] args) {
+        Atencion a = new Atencion();
+        IAtencionDAO adao = new AtencionDAOImp();
+        Vacuna v = new Vacuna("ABee", "AntiRabica", "hhhjj", Date.from(Instant.now()), true);
+        Mascota ms = new Mascota("22422", "inas", "can", "h4", "pitbl", Date.from(Instant.now()), 4, true, v);
+        PropietarioMascota pm = new PropietarioMascota("347657365", "pablo", "mamani", "calle 2", "2345645", "@hotmail", true);
+        Medicamento md = new Medicamento("1233", "curaPata", Date.from(Instant.now()), "pastilla", true);
+
+        a.setIdAtencionMedica("167");
+        a.setFechaAtencionMedica(Date.from(Instant.now()));
+        a.setDiagnostico("reservado");
+        a.setObservacion("REPOSO");
+        a.setMascota(ms);
+        a.setPropietarioMascota(pm);
+        a.setMedicamento(md);
+        a.setEstado(Boolean.TRUE);
+
+        adao.create(a);
+    }
 }

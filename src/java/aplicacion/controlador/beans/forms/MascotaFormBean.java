@@ -27,7 +27,7 @@ import org.primefaces.model.UploadedFile;
  */
 @ManagedBean
 @SessionScoped
-public class MascotaFormBean {
+public class MascotaFormBean{
 
     @ManagedProperty(value = "#{pacienteBean}")
     private MascotaBean pacienteBean;

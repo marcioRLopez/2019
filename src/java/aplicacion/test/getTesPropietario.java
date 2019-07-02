@@ -11,19 +11,19 @@ import aplicacion.modelo.dominio.PropietarioMascota;
  */
 public class getTesPropietario {
 
-//    public static void main(String[] args) {
-//
-//        PropietarioMascota unPropietario = new PropietarioMascota();
-//        IPropietarioDAO propietarioMascotaDAO = new PropietarioMascotaDAOImp();
-//
-//        unPropietario.setDni("3456665");
-//        unPropietario.setNombre("ezequiel");
-//        unPropietario.setApellido("clavijo");
-//        unPropietario.setDireccion("calle");
-//        unPropietario.setTelefono("23423423");
-//        unPropietario.setCorreoElectronico("@gmail");
-//        unPropietario.setEstado(Boolean.TRUE);
-//
-//        propietarioMascotaDAO.create(unPropietario);
-//    }
+    public static void main(String[] args) {
+
+        PropietarioMascota unPropietario = new PropietarioMascota();
+        IPropietarioDAO propietarioMascotaDAO = new PropietarioMascotaDAOImp();
+
+        unPropietario.setDni("32567895");
+        unPropietario.setNombre("mark");
+        unPropietario.setApellido("jones");
+        unPropietario.setDireccion("linea");
+        unPropietario.setTelefono("23428903");
+        unPropietario.setCorreoElectronico("@gmail");
+        unPropietario.setEstado(Boolean.TRUE);
+
+        propietarioMascotaDAO.create(unPropietario);
+    }
 }
